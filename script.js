@@ -132,14 +132,93 @@ if (deck) {
   update();
 }
 
-// ===== TESTIMONIALS: one copy of the set makes the marquee loop seamlessly =====
-const tTrack = document.querySelector('.t-track');
-if (tTrack) {
-  [...tTrack.children].forEach(c => {
-    const k = c.cloneNode(true);
-    k.setAttribute('aria-hidden', 'true');
-    tTrack.appendChild(k);
+// ===== SIDEWAYS SCROLL BY MOUSE DRAG (used by Pricing and Testimonials) =====
+// Phones and trackpads already scroll sideways by themselves; this lets a mouse drag too.
+function enableDragScroll(el) {
+  let down = false, startX = 0, startLeft = 0;
+  el.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'mouse' || e.button !== 0 || e.target.closest('a, button')) return;
+    down = true;
+    startX = e.clientX;
+    startLeft = el.scrollLeft;
   });
+  window.addEventListener('pointermove', (e) => {
+    if (!down) return;
+    const dx = e.clientX - startX;
+    if (Math.abs(dx) > 4) el.classList.add('dragging');
+    el.scrollLeft = startLeft - dx;
+  });
+  const end = () => {
+    if (!down) return;
+    down = false;
+    el.classList.remove('dragging');
+  };
+  window.addEventListener('pointerup', end);
+  window.addEventListener('pointercancel', end);
+}
+
+// ===== TESTIMONIALS: drift on their own, but you can scroll or drag them either way =====
+// Three copies of the set sit side by side. We keep the view in the middle copy and jump by exactly
+// one copy when needed, which looks identical, so it feels endless in both directions.
+const tScroller = document.querySelector('.t-marquee');
+const tTrack = document.querySelector('.t-track');
+if (tScroller && tTrack) {
+  const originals = [...tTrack.children];
+  for (let n = 0; n < 2; n++) {
+    originals.forEach(c => {
+      const k = c.cloneNode(true);
+      k.setAttribute('aria-hidden', 'true');
+      tTrack.appendChild(k);
+    });
+  }
+  enableDragScroll(tScroller);
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const SPEED = 0.45;                       // pixels per frame
+  let L = 0, pos = 0, paused = false, visible = false, raf = null, resumeTimer = null, settleTimer = null;
+
+  const measure = () => { L = tTrack.scrollWidth / 3; };
+  const normalise = () => {                 // jump one copy so the view stays in the middle copy
+    let x = tScroller.scrollLeft;
+    if (x >= 2 * L) x -= L;
+    else if (x < L) x += L;
+    else return;
+    tScroller.scrollLeft = x;
+    pos = x;
+  };
+  const init = () => { measure(); tScroller.scrollLeft = L; pos = L; };
+  init();
+  window.addEventListener('load', init);
+  window.addEventListener('resize', () => { measure(); normalise(); });
+
+  const tick = () => {
+    raf = null;
+    if (!visible) return;
+    if (!paused && !reduce.matches) {
+      pos += SPEED;
+      if (pos >= 2 * L) pos -= L;
+      tScroller.scrollLeft = pos;
+    }
+    raf = requestAnimationFrame(tick);
+  };
+  const start = () => { if (!raf && visible) raf = requestAnimationFrame(tick); };
+  new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; start(); }).observe(tScroller);
+
+  const hold = () => { paused = true; clearTimeout(resumeTimer); };
+  const release = (ms) => {
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => { pos = tScroller.scrollLeft; paused = false; }, ms);
+  };
+  tScroller.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') hold(); });
+  tScroller.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') release(400); });
+  tScroller.addEventListener('pointerdown', hold);
+  tScroller.addEventListener('touchstart', hold, { passive: true });
+  tScroller.addEventListener('touchend', () => release(2200), { passive: true });
+  tScroller.addEventListener('wheel', () => { hold(); release(2200); }, { passive: true });
+  tScroller.addEventListener('scroll', () => {
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(() => { if (paused || reduce.matches) normalise(); }, 140);
+  }, { passive: true });
 }
 
 // ===== TECH STACK: orbiting cards =====
@@ -384,3 +463,29 @@ if (contactForm && submitBtn) {
     }
   });
 }
+
+// ===== PRICING: drag with the mouse, and a small progress bar that shows where you are in the row =====
+(() => {
+  const scroller = document.getElementById('priceScroller');
+  if (!scroller) return;
+  const thumb = document.getElementById('priceThumb');
+  enableDragScroll(scroller);
+  const update = () => {
+    if (!thumb || !scroller.scrollWidth) return;
+    thumb.style.width = (scroller.clientWidth / scroller.scrollWidth * 100) + '%';
+    thumb.style.left = (scroller.scrollLeft / scroller.scrollWidth * 100) + '%';
+  };
+  scroller.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+// ===== SERVICES: cards that are off screen stop animating their icons (keeps scrolling smooth) =====
+(() => {
+  const cards = document.querySelectorAll('.svc-card');
+  if (!cards.length || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => e.target.classList.toggle('idle', !e.isIntersecting));
+  }, { rootMargin: '120px 0px' });
+  cards.forEach(c => io.observe(c));
+})();

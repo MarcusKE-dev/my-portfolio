@@ -643,7 +643,6 @@ section#expertise { padding-top: 8px; }
 }
 .svc-card:focus-visible .svc-inner,
 .svc-card.flipped .svc-inner { transform: rotateY(180deg); }
-.svc-num { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--text3); }
 .svc-ico { flex: 1; display: grid; place-items: center; min-height: 0; }
 .svc-ico svg {
   width: clamp(92px, 15vw, 128px);
@@ -1436,4 +1435,114 @@ footer {
   .svc-inner { transition-duration: .01ms; }
   .hang.show .hang-card { animation: none; }
   .mobile-drawer a { transition: none; opacity: 1; transform: none; }
+}
+/* ===== PRICING v3: scrolling row, hanging hero offer, smoother sections ===== */
+
+/* --- stops the page drifting sideways on phones (the 3D tech ring and marquees stick out past the screen edge) --- */
+section, footer { overflow-x: clip; }
+@media (max-width: 900px) { .fi, .fta { font-size: 16px; } } /* 16px stops iPhones zooming in when a field is tapped */
+
+/* --- hero: no bottom gap, the hanging offer fills the space down to Services --- */
+#hero { padding-bottom: 0; }
+section#services { padding-top: 36px; }
+
+.hang-offer { --sw-w: min(260px, 78vw); position: relative; display: flex; flex-direction: column; align-items: center; margin: 52px 0 6px; }
+.hang-rail { position: relative; width: 100%; height: 1px; background: var(--border2); }
+.hang-rail::before, .hang-rail::after {
+  content: ""; position: absolute; top: -3px; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--bg); border: 1px solid var(--border2);
+}
+.hang-rail::before { left: 0; }
+.hang-rail::after { right: 0; }
+.swing {
+  position: relative; display: flex; flex-direction: column; align-items: center;
+  text-decoration: none; transform-origin: 50% 0;
+  animation: hang-swing 3.6s ease-in-out infinite alternate;
+}
+.swing::before { /* the pin on the line */
+  content: ""; position: absolute; top: -5px; left: 50%; width: 9px; height: 9px; margin-left: -4.5px;
+  border-radius: 50%; background: var(--hl); z-index: 2;
+}
+.swing:hover { animation-play-state: paused; }
+.swing:focus-visible { outline: 2px solid var(--text2); outline-offset: 6px; border-radius: 14px; }
+@keyframes hang-swing { from { transform: rotate(-5deg); } to { transform: rotate(5deg); } }
+.sw-rope { display: block; width: var(--sw-w); height: 54px; color: var(--text2); }
+.sw-rope path { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.sw-card {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  width: var(--sw-w); padding: 18px 18px 16px; text-align: center;
+  background: var(--card); border: 1px solid var(--border2); border-radius: 14px;
+  box-shadow: var(--card-hover-shadow); transition: border-color .25s;
+}
+.sw-card::before, .sw-card::after { /* the two hooks the rope ties to */
+  content: ""; position: absolute; top: -4px; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--card); border: 1.5px solid var(--text2);
+}
+.sw-card::before { left: 12%; margin-left: -4px; }
+.sw-card::after { right: 12%; margin-right: -4px; }
+.swing:hover .sw-card { border-color: var(--text2); }
+.sw-from { font-size: 13px; color: var(--text2); }
+.sw-price { font-family: var(--sg); font-size: clamp(18px, 5.4vw, 22px); font-weight: 700; letter-spacing: -.025em; line-height: 1.25; color: var(--hl); }
+.sw-price i { font-style: normal; font-weight: 400; color: var(--text3); margin: 0 3px; }
+.sw-link { margin-top: 8px; font-size: 13px; font-weight: 600; color: var(--text1); text-decoration: underline; text-decoration-color: var(--border2); text-underline-offset: 4px; transition: text-decoration-color .2s; }
+.swing:hover .sw-link { text-decoration-color: var(--text1); }
+@media (max-width: 640px) { .hang-offer { margin-top: 40px; } }
+
+/* --- services: smoother flip, and cards that are off screen or covered stop animating --- */
+.svc-inner { transition: transform .85s cubic-bezier(.4, .1, .2, 1); will-change: transform; }
+.svc-card.idle .svc-ico svg, .svc-card.covered .svc-ico svg { animation-play-state: paused; }
+
+/* --- testimonials: still drift, but you can drag or scroll them --- */
+.t-track { animation: none; }
+.t-marquee { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; cursor: grab; user-select: none; -webkit-user-select: none; }
+.t-marquee::-webkit-scrollbar { display: none; }
+.t-marquee.dragging { cursor: grabbing; }
+
+/* --- pricing --- */
+#pricing { background: var(--bg); }
+#pricing .sec-hdr { margin-bottom: 28px; }
+#pricing .sec-desc { color: var(--text2); max-width: 560px; }
+.price-scroller {
+  --edge: max(36px, calc((100vw - 1080px) / 2 + 36px)); /* lines the first card up with the rest of the page */
+  display: flex; gap: 18px; overflow-x: auto;
+  padding: 8px var(--edge) 22px; scroll-padding-inline: var(--edge);
+  scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  cursor: grab; user-select: none; -webkit-user-select: none; outline: none;
+}
+.price-scroller::-webkit-scrollbar { display: none; }
+.price-scroller.dragging { cursor: grabbing; scroll-snap-type: none; }
+.price-scroller:focus-visible { outline: 2px solid var(--text2); outline-offset: -2px; }
+@media (max-width: 640px) { .price-scroller { --edge: 20px; gap: 14px; } }
+
+.price-card {
+  display: flex; flex-direction: column; flex: 0 0 min(310px, 82vw); scroll-snap-align: start;
+  padding: 28px 26px 26px; background: var(--card);
+  border: 1px solid var(--border); border-radius: 16px;
+  transition: border-color .25s, box-shadow .25s;
+}
+.price-card:hover { border-color: var(--border2); box-shadow: var(--card-hover-shadow); }
+.price-card.quote { background: var(--bg1); border: 1px dashed var(--border2); }
+.pc-name { font-family: var(--sg); font-size: 21px; font-weight: 700; letter-spacing: -.02em; line-height: 1.2; color: var(--hl); }
+.pc-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 14px 0 12px; }
+.pc-ksh { font-family: var(--sg); font-size: 28px; font-weight: 700; letter-spacing: -.03em; line-height: 1.1; color: var(--hl); }
+.pc-usd { font-family: var(--sg); font-size: 20px; font-weight: 700; letter-spacing: -.02em; color: var(--hl); }
+.pc-usd::before { content: "/"; margin-right: 12px; font-weight: 400; color: var(--text3); }
+.pc-for { font-size: 14px; line-height: 1.65; color: var(--text2); margin-bottom: 18px; }
+.pc-scope { font-size: 12px; line-height: 1.6; color: var(--text1); margin: -6px 0 18px; padding-left: 10px; border-left: 2px solid var(--border2); }
+.pc-sub { font-size: 12px; font-weight: 600; color: var(--text1); margin-bottom: 8px; }
+.pc-list { list-style: none; flex: 1; margin-bottom: 22px; border-top: 1px solid var(--border); }
+.pc-list li { padding: 10px 0; font-size: 13.5px; line-height: 1.5; color: var(--text2); border-bottom: 1px solid var(--border); }
+.pc-list li:last-child { border-bottom: 0; }
+.pc-cta { width: 100%; min-height: 44px; justify-content: center; }
+.pc-cta:focus-visible { outline: 2px solid var(--text2); outline-offset: 3px; }
+
+.price-hint { display: flex; align-items: center; gap: 12px; font-size: 12px; color: var(--text3); }
+.price-progress { position: relative; flex: none; width: 120px; height: 2px; border-radius: 2px; background: var(--border2); overflow: hidden; }
+.price-progress i { position: absolute; top: 0; bottom: 0; left: 0; width: 30%; border-radius: 2px; background: var(--hl); }
+.price-note { margin-top: 18px; font-size: 13px; line-height: 1.7; color: var(--text2); }
+
+@media (prefers-reduced-motion: reduce) {
+  .swing { animation: none; }
+  .svc-inner { transition-duration: .01ms; }
+  .price-scroller, .t-marquee { scroll-behavior: auto; }
 }
