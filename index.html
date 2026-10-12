@@ -121,12 +121,13 @@
 
   <!-- ===== MOBILE DRAWER ===== -->
   <div class="mobile-drawer" id="drawer" role="dialog" aria-label="Navigation menu">
-    <a href="#services">Services</a>
-    <a href="#expertise">Expertise</a>
-    <a href="projects.html">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#about">About</a>
-    <a href="#contact" class="m-cta">Contact</a>
+    <a href="#services" style="--i:0">Services</a>
+    <a href="#expertise" style="--i:1">Expertise</a>
+    <a href="projects.html" style="--i:2">Projects</a>
+    <a href="#experience" style="--i:3">Experience</a>
+    <a href="#about" style="--i:4">About</a>
+    <a href="#contact" class="m-cta" style="--i:5">Contact</a>
+    <div class="drawer-foot">mwaura.ke.john@gmail.com</div>
   </div>
 
   <!-- ===== HERO ===== -->
@@ -191,7 +192,9 @@
         </div>
         <div class="hero-photo-col">
           <div class="photo-wrap">
-            <img id="profilePhoto" src="images/portfolio-photo.png" alt="John Mwaura — Full-Stack Developer" loading="eager"
+            <img class="photo-dark" src="images/portfolio-photo.png" alt="John Mwaura — Full-Stack Developer" loading="eager"
+              width="300" height="400" />
+            <img class="photo-light" src="images/portfolio.png" alt="" aria-hidden="true" loading="eager"
               width="300" height="400" />
           </div>
         </div>
@@ -199,127 +202,142 @@
     </div>
   </section>
 
-  <!-- ===== SERVICES (cards flip on hover / tap) ===== -->
+  <!-- ===== SERVICES (sticky stacked deck + 3D icon marquee) ===== -->
   <section id="services">
     <div class="wrap">
       <div class="sec-hdr fade">
         <h2 class="sec-title">Services</h2>
-        <p class="sec-desc">Production-grade systems built for scale, automation, and measurable business outcomes.</p>
+        <p class="sec-desc">Production-grade systems built for scale, automation, and measurable business outcomes. Scroll through the deck. On a computer, hover a card for details; on a phone each card turns by itself as you scroll.</p>
       </div>
-      <div class="services-grid">
-
-        <div class="svc fade" tabindex="0">
-          <div class="svc-inner">
-            <div class="svc-face svc-front">
-              <svg class="svc-hint" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg>
-              <div class="svc-title">Full-Stack Product Development</div>
-              <div class="svc-tags"><span class="stag">Next.js</span><span class="stag">TypeScript</span><span class="stag">PostgreSQL</span></div>
+      <div class="deck" id="deck">
+        <div class="svc-slot" style="--i:0">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">01 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="8" x2="22" y2="8"/><polyline points="9 13 7 15 9 17"/><polyline points="15 13 17 15 15 17"/></svg></div>
+                <h3 class="svc-title">Full-Stack Product Development</h3>
+                <div class="svc-tags"><span class="stag">Next.js</span><span class="stag">TypeScript</span><span class="stag">PostgreSQL</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">Full-Stack Product Development</h3>
+                <p class="svc-desc">Design and development of complete web platforms, from database architecture and authentication to deployment, monitoring, and long-term scalability.</p>
+              </div>
             </div>
-            <div class="svc-face svc-back">
-              <div class="svc-title">Full-Stack Product Development</div>
-              <div class="svc-desc">Design and development of complete web platforms, from database architecture and authentication to deployment, monitoring, and long-term scalability.</div>
-            </div>
-          </div>
+          </article>
         </div>
-
-        <div class="svc fade" tabindex="0">
-          <div class="svc-inner">
-            <div class="svc-face svc-front">
-              <svg class="svc-hint" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg>
-              <div class="svc-title">API Architecture &amp; Systems Integration</div>
-              <div class="svc-tags"><span class="stag">Node.js</span><span class="stag">Prisma</span><span class="stag">REST APIs</span></div>
+        <div class="svc-slot" style="--i:1">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">02 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+                <h3 class="svc-title">API Architecture &amp; Systems Integration</h3>
+                <div class="svc-tags"><span class="stag">Node.js</span><span class="stag">Prisma</span><span class="stag">REST APIs</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">API Architecture &amp; Systems Integration</h3>
+                <p class="svc-desc">Secure backend systems, third-party integrations, payment gateways, webhooks, authentication flows, and business-critical APIs.</p>
+              </div>
             </div>
-            <div class="svc-face svc-back">
-              <div class="svc-title">API Architecture &amp; Systems Integration</div>
-              <div class="svc-desc">Secure backend systems, third-party integrations, payment gateways, webhooks, authentication flows, and business-critical APIs.</div>
-            </div>
-          </div>
+          </article>
         </div>
-
-        <div class="svc fade" tabindex="0">
-          <div class="svc-inner">
-            <div class="svc-face svc-front">
-              <svg class="svc-hint" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg>
-              <div class="svc-title">E-Commerce &amp; Payment Platforms</div>
-              <div class="svc-tags"><span class="stag">M-Pesa</span><span class="stag">Stripe</span><span class="stag">Commerce</span></div>
+        <div class="svc-slot" style="--i:2">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">03 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+                <h3 class="svc-title">E-Commerce &amp; Payment Platforms</h3>
+                <div class="svc-tags"><span class="stag">M-Pesa</span><span class="stag">Stripe</span><span class="stag">Commerce</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">E-Commerce &amp; Payment Platforms</h3>
+                <p class="svc-desc">High-conversion storefronts with M-Pesa, Stripe, inventory management, order tracking, customer accounts, and administrative workflows.</p>
+              </div>
             </div>
-            <div class="svc-face svc-back">
-              <div class="svc-title">E-Commerce &amp; Payment Platforms</div>
-              <div class="svc-desc">High-conversion storefronts with M-Pesa, Stripe, inventory management, order tracking, customer accounts, and administrative workflows.</div>
-            </div>
-          </div>
+          </article>
         </div>
-
-        <div class="svc fade" tabindex="0">
-          <div class="svc-inner">
-            <div class="svc-face svc-front">
-              <svg class="svc-hint" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg>
-              <div class="svc-title">WhatsApp Automation &amp; Customer Workflows</div>
-              <div class="svc-tags"><span class="stag">WhatsApp API</span><span class="stag">Automation</span><span class="stag">CRM Sync</span></div>
+        <div class="svc-slot" style="--i:3">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">04 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+                <h3 class="svc-title">WhatsApp Automation &amp; Customer Workflows</h3>
+                <div class="svc-tags"><span class="stag">WhatsApp API</span><span class="stag">Automation</span><span class="stag">CRM Sync</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">WhatsApp Automation &amp; Customer Workflows</h3>
+                <p class="svc-desc">Automated customer engagement systems that capture leads, process orders, send notifications, and synchronize with existing business tools.</p>
+              </div>
             </div>
-            <div class="svc-face svc-back">
-              <div class="svc-title">WhatsApp Automation &amp; Customer Workflows</div>
-              <div class="svc-desc">Automated customer engagement systems that capture leads, process orders, send notifications, and synchronize with existing business tools.</div>
-            </div>
-          </div>
+          </article>
         </div>
-
-        <div class="svc fade" tabindex="0">
-          <div class="svc-inner">
-            <div class="svc-face svc-front">
-              <svg class="svc-hint" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg>
-              <div class="svc-title">Dashboards &amp; Internal Operations Systems</div>
-              <div class="svc-tags"><span class="stag">RBAC</span><span class="stag">Analytics</span><span class="stag">Real-Time</span></div>
+        <div class="svc-slot" style="--i:4">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">05 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+                <h3 class="svc-title">Dashboards &amp; Internal Operations Systems</h3>
+                <div class="svc-tags"><span class="stag">RBAC</span><span class="stag">Analytics</span><span class="stag">Real-Time</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">Dashboards &amp; Internal Operations Systems</h3>
+                <p class="svc-desc">Real-time reporting platforms, analytics dashboards, role-based administration, audit trails, and operational management tools.</p>
+              </div>
             </div>
-            <div class="svc-face svc-back">
-              <div class="svc-title">Dashboards &amp; Internal Operations Systems</div>
-              <div class="svc-desc">Real-time reporting platforms, analytics dashboards, role-based administration, audit trails, and operational management tools.</div>
-            </div>
-          </div>
+          </article>
         </div>
-
-        <div class="svc fade" tabindex="0">
-          <div class="svc-inner">
-            <div class="svc-face svc-front">
-              <svg class="svc-hint" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg>
-              <div class="svc-title">Performance Engineering &amp; Technical SEO</div>
-              <div class="svc-tags"><span class="stag">Core Web Vitals</span><span class="stag">Schema.org</span><span class="stag">SEO</span></div>
+        <div class="svc-slot" style="--i:5">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">06 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                <h3 class="svc-title">Performance Engineering &amp; Technical SEO</h3>
+                <div class="svc-tags"><span class="stag">Core Web Vitals</span><span class="stag">Schema.org</span><span class="stag">SEO</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">Performance Engineering &amp; Technical SEO</h3>
+                <p class="svc-desc">Core Web Vitals optimization, structured data implementation, search visibility improvements, caching strategies, and performance audits.</p>
+              </div>
             </div>
-            <div class="svc-face svc-back">
-              <div class="svc-title">Performance Engineering &amp; Technical SEO</div>
-              <div class="svc-desc">Core Web Vitals optimization, structured data implementation, search visibility improvements, caching strategies, and performance audits.</div>
-            </div>
-          </div>
+          </article>
         </div>
-
-        <div class="svc fade" tabindex="0">
-          <div class="svc-inner">
-            <div class="svc-face svc-front">
-              <svg class="svc-hint" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg>
-              <div class="svc-title">Cloud Deployment &amp; DevOps</div>
-              <div class="svc-tags"><span class="stag">Docker</span><span class="stag">GitHub Actions</span><span class="stag">Cloud Infrastructure</span></div>
+        <div class="svc-slot" style="--i:6">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">07 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+                <h3 class="svc-title">Cloud Deployment &amp; DevOps</h3>
+                <div class="svc-tags"><span class="stag">Docker</span><span class="stag">GitHub Actions</span><span class="stag">Cloud Infrastructure</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">Cloud Deployment &amp; DevOps</h3>
+                <p class="svc-desc">Production deployments, CI/CD pipelines, infrastructure automation, environment management, monitoring, and operational reliability.</p>
+              </div>
             </div>
-            <div class="svc-face svc-back">
-              <div class="svc-title">Cloud Deployment &amp; DevOps</div>
-              <div class="svc-desc">Production deployments, CI/CD pipelines, infrastructure automation, environment management, monitoring, and operational reliability.</div>
-            </div>
-          </div>
+          </article>
         </div>
-
-        <div class="svc fade" tabindex="0">
-          <div class="svc-inner">
-            <div class="svc-face svc-front">
-              <svg class="svc-hint" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg>
-              <div class="svc-title">Public Sector &amp; Civic-Tech Platforms</div>
-              <div class="svc-tags"><span class="stag">Open Data</span><span class="stag">Case Management</span><span class="stag">Transparency</span></div>
+        <div class="svc-slot" style="--i:7">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">08 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 20 7 4 7"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><line x1="3" y1="22" x2="21" y2="22"/><line x1="2" y1="18" x2="22" y2="18"/></svg></div>
+                <h3 class="svc-title">Public Sector &amp; Civic-Tech Platforms</h3>
+                <div class="svc-tags"><span class="stag">Open Data</span><span class="stag">Case Management</span><span class="stag">Transparency</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">Public Sector &amp; Civic-Tech Platforms</h3>
+                <p class="svc-desc">Transparency, accountability, case-management, and public-data systems designed for government agencies, NGOs, and civic organizations.</p>
+              </div>
             </div>
-            <div class="svc-face svc-back">
-              <div class="svc-title">Public Sector &amp; Civic-Tech Platforms</div>
-              <div class="svc-desc">Transparency, accountability, case-management, and public-data systems designed for government agencies, NGOs, and civic organizations.</div>
-            </div>
-          </div>
+          </article>
         </div>
-
       </div>
     </div>
   </section>
@@ -343,7 +361,7 @@
           <div class="skill-card" style="--i:5"><div class="sk-cat">Production Systems</div><div class="sk-items"><div class="sk-item">Sentry</div><div class="sk-item">PostHog</div><div class="sk-item">BullMQ</div><div class="sk-item">Background Jobs</div><div class="sk-item">Caching</div></div></div>
         </div>
       </div>
-      <p class="orbit-hint">Drag to spin · hover to pause</p>
+      <p class="orbit-hint">Drag or swipe to spin</p>
 
       <div class="marquee fade" aria-label="Technologies I work with">
         <div class="marq-row" data-row="0"></div>
@@ -403,47 +421,35 @@
     <div class="wrap">
       <div class="about-grid">
         <div class="fade">
-          <h2 class="sec-title" style="margin-bottom:16px;">Building software that solves real problems.</h2>
-          <p class="about-p">I'm an independent Full-Stack Developer focused on designing and building production-grade web applications, business automation systems, and digital platforms that help organisations operate more efficiently.</p>
-          <p class="about-p">Since 2023, I have worked across e-commerce, automation, public-sector technology, and business operations software. My work spans the entire product lifecycle from planning and architecture to deployment, monitoring, and long-term maintenance.</p>
-          <p class="about-p">My flagship project, UWAZI, is a public finance transparency platform designed to make government expenditure more accessible and accountable. Alongside civic-tech initiatives, I build commercial systems including payment platforms, administrative dashboards, customer automation tools, and business websites.</p>
-          <p class="about-p">I believe good software should be reliable, secure, maintainable, and built around the people who use it. Every project I take on is approached with a long-term engineering mindset rather than a quick-delivery mentality.</p>
+          <h2 class="sec-title">Building software that solves real problems.</h2>
+          <p class="about-p">Independent full-stack developer since 2023. I build e-commerce, automation and civic-tech systems, from the first idea to launch and support.</p>
         </div>
-        <div class="fade">
-          <div class="approach-cards">
-            <div class="apcard"><div class="ap-icon">◉</div><div><div class="ap-title">Business Problems Before Technology</div><div class="ap-desc">Every project starts with understanding operational challenges, user needs, and business objectives before selecting tools or frameworks.</div></div></div>
-            <div class="apcard"><div class="ap-icon">◉</div><div><div class="ap-title">End-to-End Ownership</div><div class="ap-desc">From database architecture and APIs to deployment, monitoring, and maintenance, I take responsibility for the complete system.</div></div></div>
-            <div class="apcard"><div class="ap-icon">◉</div><div><div class="ap-title">Built for Real-World Usage</div><div class="ap-desc">Mobile-first experiences, payment integrations, automation workflows, and practical solutions designed for how people actually work.</div></div></div>
-            <div class="apcard"><div class="ap-icon">◉</div><div><div class="ap-title">Performance, Security &amp; Reliability</div><div class="ap-desc">Strong emphasis on maintainable code, application security, scalable architecture, and long-term operational stability.</div></div></div>
-          </div>
+        <div class="hang fade">
+          <div class="hang-card" style="--i:0"><div class="ap-title">Business Problems Before Technology</div><div class="ap-desc">I start with the problem and the people, then pick the tools.</div></div>
+          <div class="hang-card" style="--i:1"><div class="ap-title">End-to-End Ownership</div><div class="ap-desc">Database, APIs, deployment and maintenance, all handled.</div></div>
+          <div class="hang-card" style="--i:2"><div class="ap-title">Built for Real-World Usage</div><div class="ap-desc">Mobile-first, payment-ready and practical.</div></div>
+          <div class="hang-card" style="--i:3"><div class="ap-title">Performance, Security &amp; Reliability</div><div class="ap-desc">Maintainable code that stays fast, safe and stable.</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== TESTIMONIALS ===== -->
+  <!-- ===== TESTIMONIALS (right-to-left marquee) ===== -->
   <section id="testimonials">
     <div class="wrap">
       <div class="sec-hdr fade">
-        <h2 class="sec-title">Testimonials</h2>
+        <h2 class="sec-title">What my clients say</h2>
         <p class="sec-desc">Feedback from clients and business owners I've worked with.</p>
       </div>
-      <div class="test-grid">
-        <div class="test-card fade">
-          <div class="test-stars">★★★★★</div>
-          <p class="test-quote">“John was easy to work with and delivered the e-commerce platform on time. He handled the technical side, including the M-Pesa integration, and the final system made things much easier for us.”</p>
-          <div class="test-author"><div class="test-av">ND</div><div><div class="test-name">Niks Digital Connections</div><div class="test-role">Business Owner</div></div></div>
-        </div>
-        <div class="test-card fade">
-          <div class="test-stars">★★★★★</div>
-          <p class="test-quote">“John did a great job on our website. He handled the development, SEO, email setup, and deployment, and was available when we needed technical support.”</p>
-          <div class="test-author"><div class="test-av">KW</div><div><div class="test-name">Karen West Natural Spring</div><div class="test-role">Management Team</div></div></div>
-        </div>
-        <div class="test-card fade">
-          <div class="test-stars">★★★★★</div>
-          <p class="test-quote">“John was responsive and clear throughout the project. The final website matched what we needed, and it was easy to work with him from start to finish.”</p>
-          <div class="test-author"><div class="test-av">CL</div><div><div class="test-name">Client Feedback</div><div class="test-role">Project Stakeholder</div></div></div>
-        </div>
+    </div>
+    <div class="t-marquee" aria-label="Client testimonials">
+      <div class="t-track">
+        <figure class="t-card"><span class="qicon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 18c0-6 3-10 9-12l1 2.2C11 9.4 9.7 11 9.4 13H14v11H4V18zm14 0c0-6 3-10 9-12l1 2.2c-3 1.2-4.3 2.8-4.6 4.8H28v11H18V18z"/></svg></span><blockquote class="t-quote">“John was easy to work with and delivered the e-commerce platform on time. He handled the technical side, including the M-Pesa integration, and the final system made things much easier for us.”</blockquote><figcaption class="t-by"><span class="t-name">Nicholas W.</span><span class="t-role">Business Owner, Niks Digital Connections</span></figcaption></figure>
+        <figure class="t-card"><span class="qicon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 18c0-6 3-10 9-12l1 2.2C11 9.4 9.7 11 9.4 13H14v11H4V18zm14 0c0-6 3-10 9-12l1 2.2c-3 1.2-4.3 2.8-4.6 4.8H28v11H18V18z"/></svg></span><blockquote class="t-quote">“John did a great job on our website. He handled the development, SEO, email setup, and deployment, and was available when we needed technical support.”</blockquote><figcaption class="t-by"><span class="t-name">Humphrey M.</span><span class="t-role">Owner, Karen West Natural Spring</span></figcaption></figure>
+        <figure class="t-card"><span class="qicon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 18c0-6 3-10 9-12l1 2.2C11 9.4 9.7 11 9.4 13H14v11H4V18zm14 0c0-6 3-10 9-12l1 2.2c-3 1.2-4.3 2.8-4.6 4.8H28v11H18V18z"/></svg></span><blockquote class="t-quote">“John built a clean, fast website for our plumbing business. It works well on phones and makes it easy for customers to find us and get in touch.”</blockquote><figcaption class="t-by"><span class="t-name">David A.</span><span class="t-role">Dalo Plumbing Solutions</span></figcaption></figure>
+        <figure class="t-card"><span class="qicon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 18c0-6 3-10 9-12l1 2.2C11 9.4 9.7 11 9.4 13H14v11H4V18zm14 0c0-6 3-10 9-12l1 2.2c-3 1.2-4.3 2.8-4.6 4.8H28v11H18V18z"/></svg></span><blockquote class="t-quote">“The website presents our clinic's services clearly and makes it simple for patients to reach us. John was professional from start to finish.”</blockquote><figcaption class="t-by"><span class="t-name">William</span><span class="t-role">Mboroti Healthcare</span></figcaption></figure>
+        <figure class="t-card"><span class="qicon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 18c0-6 3-10 9-12l1 2.2C11 9.4 9.7 11 9.4 13H14v11H4V18zm14 0c0-6 3-10 9-12l1 2.2c-3 1.2-4.3 2.8-4.6 4.8H28v11H18V18z"/></svg></span><blockquote class="t-quote">“John delivered a polished website that shows our work beautifully, and enquiries from the form land straight in our inbox.”</blockquote><figcaption class="t-by"><span class="t-name">Charles M.</span><span class="t-role">Charles Upholstery</span></figcaption></figure>
+        <figure class="t-card"><span class="qicon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 18c0-6 3-10 9-12l1 2.2C11 9.4 9.7 11 9.4 13H14v11H4V18zm14 0c0-6 3-10 9-12l1 2.2c-3 1.2-4.3 2.8-4.6 4.8H28v11H18V18z"/></svg></span><blockquote class="t-quote">“John was responsive and clear throughout the project. The final website matched what we needed, and it was easy to work with him from start to finish.”</blockquote><figcaption class="t-by"><span class="t-name">Client Feedback</span><span class="t-role">Project Stakeholder</span></figcaption></figure>
       </div>
     </div>
   </section>
@@ -454,7 +460,7 @@
       <div class="contact-grid">
         <div class="fade">
           <h2 class="sec-title" style="margin-bottom:12px;">Let's discuss your next project.</h2>
-          <p class="contact-copy">Need a web application, automation system, e-commerce platform, or custom business tool? Share your requirements and I'll review the project, identify the best technical approach, and outline the next steps. Based in Nairobi and working remotely with clients in the US, Canada and worldwide.</p>
+          <p class="contact-copy">Tell me what you're building and I'll reply within 24 hours. Based in Nairobi, working with clients worldwide.</p>
           <div class="clinks">
             <a href="mailto:mwaura.ke.john@gmail.com" class="clink"><div class="clink-icon">✉</div><div><div class="clink-lbl">Email</div><div class="clink-val">mwaura.ke.john@gmail.com</div></div></a>
             <a href="https://linkedin.com/in/john-mwaura-dev" class="clink" target="_blank" rel="noopener"><div class="clink-icon">in</div><div><div class="clink-lbl">LinkedIn</div><div class="clink-val">linkedin.com/in/john-mwaura-dev</div></div></a>
@@ -471,7 +477,7 @@
               <div class="fg"><label class="fl" for="fname">Name</label><input class="fi" type="text" id="fname" name="name" placeholder="John Doe" required /></div>
               <div class="fg"><label class="fl" for="femail">Email</label><input class="fi" type="email" id="femail" name="email" placeholder="john@example.com" required /></div>
             </div>
-            <div class="fg"><label class="fl" for="fphone">Phone Number</label><input class="fi" type="tel" id="fphone" name="phone" placeholder="+1 555 123 4567 or +254 712 345 678" /></div>
+            <div class="fg"><label class="fl" for="fphone">Phone Number</label><input class="fi" type="tel" id="fphone" name="phone" /></div>
             <div class="fg"><label class="fl" for="fcompany">Company (Optional)</label><input class="fi" type="text" id="fcompany" name="company" placeholder="Company Name" /></div>
             <div class="fg"><label class="fl">Service Required</label>
               <div class="custom-select" data-name="service">
@@ -496,13 +502,25 @@
               <div class="custom-select" data-name="budget">
                 <div class="custom-select-trigger">Select budget range...</div>
                 <div class="custom-select-options">
-                  <div data-value="Under $500 (about KSh 65,000)">Under $500 &nbsp;·&nbsp; ≈ KSh 65,000</div>
-                  <div data-value="$500 – $1,500 (about KSh 65,000 – 195,000)">$500 – $1,500 &nbsp;·&nbsp; ≈ KSh 65,000 – 195,000</div>
-                  <div data-value="$1,500 – $3,000 (about KSh 195,000 – 390,000)">$1,500 – $3,000 &nbsp;·&nbsp; ≈ KSh 195,000 – 390,000</div>
-                  <div data-value="$3,000 – $7,500 (about KSh 390,000 – 975,000)">$3,000 – $7,500 &nbsp;·&nbsp; ≈ KSh 390,000 – 975,000</div>
-                  <div data-value="$7,500+ (about KSh 975,000+)">$7,500+ &nbsp;·&nbsp; ≈ KSh 975,000+</div>
-                  <div data-value="Open to Discussion">Open to Discussion</div>
-                </div>
+  <div data-value="KSh 10,000 – 39,000 (about $75 – $300)">
+    KSh 10,000 – 40,000 &nbsp;·&nbsp; ≈ $75 – $300
+  </div>
+  <div data-value="KSh 39,000 – 65,000 (about $300 – $500)">
+    KSh 40,000 – 65,000 &nbsp;·&nbsp; ≈ $300 – $500
+  </div>
+  <div data-value="KSh 65,000 – 130,000 (about $500 – $1,000)">
+    KSh 65,000 – 130,000 &nbsp;·&nbsp; ≈ $500 – $1,000
+  </div>
+  <div data-value="KSh 130,000 – 325,000 (about $1,000 – $2,500)">
+    KSh 130,000 – 325,000 &nbsp;·&nbsp; ≈ $1,000 – $2,500
+  </div>
+  <div data-value="KSh 325,000+ (about $2,500+)">
+    KSh 325,000+ &nbsp;·&nbsp; ≈ $2,500+
+  </div>
+  <div data-value="Not sure yet – open to discussion">
+    Not sure yet &nbsp;·&nbsp; Open to discussion
+  </div>
+</div>
                 <input type="hidden" name="budget" class="custom-select-input">
               </div>
             </div>
@@ -544,7 +562,8 @@
           <div class="footer-name">John</div>
           <div class="footer-copy">© <span id="yr"></span> John · Full-Stack Developer · Kenya</div>
         </div>
-        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <a class="footer-brand" href="https://abcsystems.co.ke" target="_blank" rel="noopener">ABC Systems</a>
+        <div class="footer-right">
           <div class="footer-links"><a href="#services">Services</a><a href="projects.html">Projects</a><a href="#about">About</a><a href="mailto:mwaura.ke.john@gmail.com">Email</a></div>
           <div class="footer-socials"><a href="https://github.com/MarcusKE-dev" class="social-link" target="_blank" rel="noopener" title="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg></a><a href="https://linkedin.com/in/john-mwaura-dev" class="social-link" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg></a></div>
         </div>

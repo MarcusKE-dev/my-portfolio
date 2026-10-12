@@ -76,27 +76,79 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.07, rootMargin: '0px 0px -20px 0px' });
 fades.forEach(el => observer.observe(el));
 
-// ===== SERVICE CARDS: flip on hover (desktop), tap (touch), Enter/Space (keyboard) =====
-const noHover = window.matchMedia('(hover: none)');
-document.querySelectorAll('.svc').forEach(card => {
-  card.addEventListener('click', () => {
-    if (noHover.matches) card.classList.toggle('flipped');
+// ===== SERVICES: sticky stacked deck =====
+const deck = document.getElementById('deck');
+if (deck) {
+  const slots = [...deck.querySelectorAll('.svc-slot')];
+  const cards = slots.map(s => s.querySelector('.svc-card'));
+  const inners = cards.map(c => c.querySelector('.svc-inner'));
+  const touch = window.matchMedia('(hover: none)');
+  const clamp = (v) => Math.min(1, Math.max(0, v));
+  let sticks = [], h = 0, gap = 0, ticking = false;
+
+  // keyboard: Enter / Space turns a card (mouse = hover, phone = scroll)
+  cards.forEach(card => {
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.classList.toggle('flipped'); }
+    });
   });
-  card.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      card.classList.toggle('flipped');
-    }
+
+  const measure = () => {
+    sticks = slots.map(s => parseFloat(getComputedStyle(s).top) || 0);
+    h = slots[0].offsetHeight;
+    gap = parseFloat(getComputedStyle(slots[0]).marginBottom) || 0;
+  };
+
+  const update = () => {
+    ticking = false;
+    const y = window.pageYOffset;
+    const deckTop = deck.getBoundingClientRect().top + y;
+    cards.forEach((card, i) => {
+      // when the next card slides over this one, it scales to .95 and dims (still solid)
+      const next = slots[i + 1];
+      const p = next ? clamp(1 - (next.getBoundingClientRect().top - sticks[i + 1]) / h) : 0;
+      card.style.transform = p ? `scale(${1 - 0.05 * p})` : '';
+      card.style.setProperty('--dim', p.toFixed(3));
+      card.classList.toggle('covered', p > 0.5);
+
+      const inner = inners[i];
+      if (touch.matches) {
+        // phones: no hover, so the card turns to its explanation by itself while you scroll
+        const q = y - (deckTop + i * (h + gap) - sticks[i]);
+        inner.style.transition = 'none';
+        inner.style.transform = `rotateY(${clamp(q / (gap * 0.6)) * 180}deg)`;
+      } else if (inner.style.transform) {
+        inner.style.transition = '';
+        inner.style.transform = '';
+      }
+    });
+  };
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', () => { measure(); onScroll(); });
+  if (touch.addEventListener) touch.addEventListener('change', () => { measure(); onScroll(); });
+  measure();
+  update();
+}
+
+// ===== TESTIMONIALS: one copy of the set makes the marquee loop seamlessly =====
+const tTrack = document.querySelector('.t-track');
+if (tTrack) {
+  [...tTrack.children].forEach(c => {
+    const k = c.cloneNode(true);
+    k.setAttribute('aria-hidden', 'true');
+    tTrack.appendChild(k);
   });
-});
+}
 
 // ===== TECH STACK: orbiting cards =====
 // Auto-rotates, pauses on hover, drag to spin it yourself.
-// Phones and reduced-motion users get a plain grid (handled in CSS).
+// Works on phones too: swipe sideways to spin it. Reduced-motion users get a plain grid (CSS).
 const orbitEl = document.querySelector('.orbit');
 const ring = document.querySelector('.orbit-ring');
 if (orbitEl && ring) {
-  const mq = window.matchMedia('(min-width: 821px) and (prefers-reduced-motion: no-preference)');
+  const mq = window.matchMedia('(prefers-reduced-motion: no-preference)');
   const BASE_SPEED = -0.12;   // degrees per frame
   let angle = 0, vel = 0, lastX = 0;
   let dragging = false, hovering = false, visible = false, raf = null;
@@ -144,6 +196,7 @@ if (orbitEl && ring) {
 // ===== TECH ICON STRIP =====
 // Icons load from the Devicon CDN. To avoid any third-party dependency, download the
 // SVGs into /images/tech/ and change ICON_BASE to 'images/tech/' (file names: react.svg, etc.).
+const MONO = ['Next.js', 'Vercel', 'Prisma', 'Linux']; // black logos get a white version on dark
 const ICON_BASE = 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/';
 const TECH_ROWS = [
   [
@@ -174,7 +227,7 @@ document.querySelectorAll('.marq-row').forEach(row => {
   const items = TECH_ROWS[Number(row.dataset.row)] || [];
   const chip = ([name, path], hidden) => `
     <div class="tech-chip"${hidden ? ' aria-hidden="true"' : ''}>
-      <span class="tech-ico"><img src="${ICON_BASE}${path}.svg" alt="" loading="lazy" data-letter="${name[0]}"></span>
+      <span class="tech-ico${MONO.includes(name) ? ' mono' : ''}"><img src="${ICON_BASE}${path}.svg" alt="" loading="lazy" data-letter="${name[0]}"></span>
       ${name}
     </div>`;
   // The list is doubled so the loop is seamless (the animation moves exactly half the track)
@@ -215,20 +268,17 @@ document.addEventListener('click', () => {
   document.querySelectorAll('.custom-select.open').forEach(s => s.classList.remove('open'));
 });
 
-// ===== THEME TOGGLE + PHOTO =====
+// ===== THEME TOGGLE =====
+// Both hero photos are always in the page (CSS shows the right one), so nothing
+// has to load when the theme changes. That load was one cause of the late flash.
 const themeToggle = document.getElementById('themeToggle');
 const sunIcon = document.querySelector('.theme-toggle .sun-icon');
 const moonIcon = document.querySelector('.theme-toggle .moon-icon');
-const profilePhoto = document.getElementById('profilePhoto');
-const darkPhoto = 'images/portfolio-photo.png';
-const lightPhoto = 'images/portfolio.png';
-
-function updatePhoto(theme) {
-  if (profilePhoto) profilePhoto.src = theme === 'light' ? lightPhoto : darkPhoto;
-}
+const root = document.documentElement;
+let themeBusy = false;
 
 function applyTheme(isLight) {
-  document.documentElement.classList.toggle('light', isLight);
+  root.classList.toggle('light', isLight);
   if (sunIcon && moonIcon) {
     sunIcon.style.display = isLight ? 'none' : 'block';
     moonIcon.style.display = isLight ? 'block' : 'none';
@@ -236,45 +286,63 @@ function applyTheme(isLight) {
   if (themeToggle) {
     themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
   }
-  updatePhoto(isLight ? 'light' : 'dark');
   try { localStorage.setItem('theme', isLight ? 'light' : 'dark'); } catch (_) {}
 }
 
 let savedTheme = null;
 try { savedTheme = localStorage.getItem('theme'); } catch (_) {}
 if (savedTheme === 'light') applyTheme(true);
-else updatePhoto('dark');
+
+const THEME_MS = 1400;
+const THEME_EASE = 'cubic-bezier(.45, 0, .25, 1)';
 
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
-    const toLight = !document.documentElement.classList.contains('light');
+    if (themeBusy) return;
+    const toLight = !root.classList.contains('light');
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!document.startViewTransition || reduce) return applyTheme(toLight);
 
+    if (reduce) return applyTheme(toLight);
+
+    // Browsers without View Transitions: slow, even cross-fade
+    if (!document.startViewTransition) {
+      root.classList.add('theme-fade');
+      applyTheme(toLight);
+      setTimeout(() => root.classList.remove('theme-fade'), 800);
+      return;
+    }
+
+    themeBusy = true;
     // Both circles are centred on the middle of the screen
     const cx = window.innerWidth / 2;
     const cy = window.innerHeight / 2;
     const radius = Math.hypot(cx, cy);
 
-    document.documentElement.dataset.vt = toLight ? 'to-light' : 'to-dark';
+    root.classList.add('theme-switching');            // no colour transitions mid-switch
+    root.dataset.vt = toLight ? 'to-light' : 'to-dark';
     const transition = document.startViewTransition(() => applyTheme(toLight));
 
     transition.ready.then(() => {
       if (toLight) {
         // Light mode: a circle opens from the centre and grows outwards
-        document.documentElement.animate(
+        root.animate(
           { clipPath: [`circle(0px at ${cx}px ${cy}px)`, `circle(${radius}px at ${cx}px ${cy}px)`] },
-          { duration: 900, easing: 'cubic-bezier(.22,1,.36,1)', pseudoElement: '::view-transition-new(root)' }
+          { duration: THEME_MS, easing: THEME_EASE, fill: 'both', pseudoElement: '::view-transition-new(root)' }
         );
       } else {
         // Dark mode: a circle closes from the edges and meets in the centre
-        document.documentElement.animate(
+        root.animate(
           { clipPath: [`circle(${radius}px at ${cx}px ${cy}px)`, `circle(0px at ${cx}px ${cy}px)`] },
-          { duration: 900, easing: 'cubic-bezier(.65,0,.35,1)', pseudoElement: '::view-transition-old(root)' }
+          { duration: THEME_MS, easing: THEME_EASE, fill: 'both', pseudoElement: '::view-transition-old(root)' }
         );
       }
+    }).catch(() => {});
+
+    transition.finished.finally(() => {
+      root.classList.remove('theme-switching');
+      delete root.dataset.vt;
+      themeBusy = false;
     });
-    transition.finished.finally(() => { delete document.documentElement.dataset.vt; });
   });
 }
 

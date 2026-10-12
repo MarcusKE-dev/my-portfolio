@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== SEO: devjohn.site ===== -->
+  <title>John Mwaura | Full-Stack Developer for Hire | React &amp; Next.js</title>
+  <meta name="description" content="Full-stack developer (React, Next.js, Node.js) building web apps, e-commerce and automation for clients in the US, Canada and worldwide. Based in Nairobi, Kenya.">
+  <meta name="keywords" content="full stack developer for hire, freelance web developer, React developer, Next.js developer, Node.js developer, remote web developer, web developer Kenya, web developer Nairobi">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="John Mwaura">
+  <link rel="canonical" href="https://devjohn.site/">
+  <link rel="alternate" hreflang="en" href="https://devjohn.site/">
+  <link rel="alternate" hreflang="x-default" href="https://devjohn.site/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="John Mwaura">
+  <meta property="og:title" content="John Mwaura | Full-Stack Developer for Hire">
+  <meta property="og:description" content="React, Next.js and Node.js web apps, e-commerce and automation for clients in the US, Canada and worldwide.">
+  <meta property="og:url" content="https://devjohn.site/">
+  <meta property="og:image" content="https://devjohn.site/images/portfolio-photo.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="John Mwaura | Full-Stack Developer for Hire">
+  <meta name="twitter:description" content="React, Next.js and Node.js web apps, e-commerce and automation for clients in the US, Canada and worldwide.">
+  <meta name="twitter:image" content="https://devjohn.site/images/portfolio-photo.png">
+
+  <!-- These two belong to the old dev-john.vercel.app property. Keep them, and add the new
+       devjohn.site verification in Google Search Console (DNS verification needs no tag). -->
+  <meta name="google-site-verification" content="uzqB56LQS-52k3m5_CsRqesOZOY5c0o4vH8euG51U0A" />
+  <meta name="google-site-verification" content="D5gkjQ3M9zxiS1oTsMBOUVK_u9yuAVRfbS9Kv6t4-3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <!-- Apply the saved theme before first paint (no dark flash for light-mode visitors) -->
+  <script>try { if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light'); } catch (e) {}</script>
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://devjohn.site/#john",
+        "name": "John Mwaura",
+        "jobTitle": "Full Stack Web Developer",
+        "url": "https://devjohn.site/",
+        "image": "https://devjohn.site/images/portfolio-photo.png",
+        "email": "mailto:mwaura.ke.john@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE" },
+        "sameAs": [
+          "https://github.com/MarcusKE-dev",
+          "https://linkedin.com/in/john-mwaura-dev"
+        ],
+        "knowsAbout": ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "PostgreSQL", "Web Development"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "name": "John Mwaura – Web Development",
+        "url": "https://devjohn.site/",
+        "provider": { "@id": "https://devjohn.site/#john" },
+        "serviceType": ["Web application development", "E-commerce development", "Business automation", "API development"],
+        "areaServed": [
+          { "@type": "Country", "name": "United States" },
+          { "@type": "Country", "name": "Canada" },
+          { "@type": "Country", "name": "Kenya" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav id="nav">
+    <div class="wrap">
+      <div class="nav-inner">
+        <a href="#" class="logo">Dev<span>.</span>John</a>
+        <div class="nav-menu">
+          <a href="#services">Services</a>
+          <a href="#expertise">Expertise</a>
+          <a href="projects.html">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#about">About</a>
+          <a href="#contact" class="nav-cta">Contact</a>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button id="themeToggle" class="theme-toggle" aria-label="Switch to light mode">
+            <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" style="display:none;">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+          <button class="nav-toggle" id="navtoggle" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== MOBILE DRAWER ===== -->
+  <div class="mobile-drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="#services" style="--i:0">Services</a>
+    <a href="#expertise" style="--i:1">Expertise</a>
+    <a href="projects.html" style="--i:2">Projects</a>
+    <a href="#experience" style="--i:3">Experience</a>
+    <a href="#about" style="--i:4">About</a>
+    <a href="#contact" class="m-cta" style="--i:5">Contact</a>
+    <div class="drawer-foot">mwaura.ke.john@gmail.com</div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1 class="hero-name"><span class="line"><span class="word">John</span></span></h1>
+          <h2 class="hero-sub hero-in" style="--d:350ms">Full-Stack Developer</h2>
+          <p class="hero-role hero-in" style="--d:450ms">I design and develop scalable web platforms, automation workflows, and business-critical
+            software that help organizations operate more efficiently.</p>
+          <div class="hero-socials hero-in" style="--d:550ms">
+            <a href="https://github.com/MarcusKE-dev" class="social-link" target="_blank" rel="noopener" title="GitHub">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/john-mwaura-dev" class="social-link" target="_blank" rel="noopener"
+              title="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="mailto:mwaura.ke.john@gmail.com" class="social-link" title="Email">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+            <a href="https://wa.me/254741104469" class="social-link" target="_blank" rel="noopener" title="WhatsApp">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+            </a>
+          </div>
+          <div class="hero-actions hero-in" style="--d:650ms">
+            <a href="projects.html" class="btn-white">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect x="2" y="2" width="20" height="20" rx="2" />
+                <line x1="2" y1="9" x2="22" y2="9" />
+                <line x1="9" y1="2" x2="9" y2="22" />
+              </svg>
+              View Projects
+            </a>
+            <a href="John-Mwaura-CV.pdf" download class="btn-projects">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+              Download Resume
+            </a>
+            <a href="#contact" class="btn-ghost">Start a project</a>
+          </div>
+          <div class="hero-stats hero-in" style="--d:750ms">
+            <div><div class="hero-stat-n">25+</div><div class="hero-stat-l">Projects</div></div>
+            <div><div class="hero-stat-n">3+</div><div class="hero-stat-l">Years</div></div>
+            <div><div class="hero-stat-n">98%</div><div class="hero-stat-l">Retention</div></div>
+            <div><div class="hero-stat-n">99+</div><div class="hero-stat-l">Lighthouse Score</div></div>
+          </div>
+        </div>
+        <div class="hero-photo-col">
+          <div class="photo-wrap">
+            <img class="photo-dark" src="images/portfolio-photo.png" alt="John Mwaura — Full-Stack Developer" loading="eager"
+              width="300" height="400" />
+            <img class="photo-light" src="images/portfolio.png" alt="" aria-hidden="true" loading="eager"
+              width="300" height="400" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES (sticky stacked deck + 3D icon marquee) ===== -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-hdr fade">
+        <h2 class="sec-title">Services</h2>
+        <p class="sec-desc">Production-grade systems built for scale, automation, and measurable business outcomes. Scroll to stack the deck, hover or tap a card for details.</p>
+      </div>
+      <div class="deck" id="deck">
+        <div class="svc-slot" style="--i:0">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-glow"></div>
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">01 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="8" x2="22" y2="8"/><polyline points="9 13 7 15 9 17"/><polyline points="15 13 17 15 15 17"/></svg></div>
+                <h3 class="svc-title">Full-Stack Product Development</h3>
+                <div class="svc-tags"><span class="stag">Next.js</span><span class="stag">TypeScript</span><span class="stag">PostgreSQL</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">Full-Stack Product Development</h3>
+                <p class="svc-desc">Design and development of complete web platforms, from database architecture and authentication to deployment, monitoring, and long-term scalability.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="svc-slot" style="--i:1">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-glow"></div>
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">02 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+                <h3 class="svc-title">API Architecture &amp; Systems Integration</h3>
+                <div class="svc-tags"><span class="stag">Node.js</span><span class="stag">Prisma</span><span class="stag">REST APIs</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">API Architecture &amp; Systems Integration</h3>
+                <p class="svc-desc">Secure backend systems, third-party integrations, payment gateways, webhooks, authentication flows, and business-critical APIs.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="svc-slot" style="--i:2">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-glow"></div>
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">03 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+                <h3 class="svc-title">E-Commerce &amp; Payment Platforms</h3>
+                <div class="svc-tags"><span class="stag">M-Pesa</span><span class="stag">Stripe</span><span class="stag">Commerce</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">E-Commerce &amp; Payment Platforms</h3>
+                <p class="svc-desc">High-conversion storefronts with M-Pesa, Stripe, inventory management, order tracking, customer accounts, and administrative workflows.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="svc-slot" style="--i:3">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-glow"></div>
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">04 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+                <h3 class="svc-title">WhatsApp Automation &amp; Customer Workflows</h3>
+                <div class="svc-tags"><span class="stag">WhatsApp API</span><span class="stag">Automation</span><span class="stag">CRM Sync</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">WhatsApp Automation &amp; Customer Workflows</h3>
+                <p class="svc-desc">Automated customer engagement systems that capture leads, process orders, send notifications, and synchronize with existing business tools.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="svc-slot" style="--i:4">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-glow"></div>
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">05 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+                <h3 class="svc-title">Dashboards &amp; Internal Operations Systems</h3>
+                <div class="svc-tags"><span class="stag">RBAC</span><span class="stag">Analytics</span><span class="stag">Real-Time</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">Dashboards &amp; Internal Operations Systems</h3>
+                <p class="svc-desc">Real-time reporting platforms, analytics dashboards, role-based administration, audit trails, and operational management tools.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="svc-slot" style="--i:5">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-glow"></div>
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">06 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                <h3 class="svc-title">Performance Engineering &amp; Technical SEO</h3>
+                <div class="svc-tags"><span class="stag">Core Web Vitals</span><span class="stag">Schema.org</span><span class="stag">SEO</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">Performance Engineering &amp; Technical SEO</h3>
+                <p class="svc-desc">Core Web Vitals optimization, structured data implementation, search visibility improvements, caching strategies, and performance audits.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="svc-slot" style="--i:6">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-glow"></div>
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">07 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+                <h3 class="svc-title">Cloud Deployment &amp; DevOps</h3>
+                <div class="svc-tags"><span class="stag">Docker</span><span class="stag">GitHub Actions</span><span class="stag">Cloud Infrastructure</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">Cloud Deployment &amp; DevOps</h3>
+                <p class="svc-desc">Production deployments, CI/CD pipelines, infrastructure automation, environment management, monitoring, and operational reliability.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="svc-slot" style="--i:7">
+          <article class="svc-card" tabindex="0">
+            <div class="svc-glow"></div>
+            <div class="svc-inner">
+              <div class="svc-face svc-front">
+                <span class="svc-num">08 / 08</span>
+                <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 20 7 4 7"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><line x1="3" y1="22" x2="21" y2="22"/><line x1="2" y1="18" x2="22" y2="18"/></svg></div>
+                <h3 class="svc-title">Public Sector &amp; Civic-Tech Platforms</h3>
+                <div class="svc-tags"><span class="stag">Open Data</span><span class="stag">Case Management</span><span class="stag">Transparency</span></div>
+              </div>
+              <div class="svc-face svc-back">
+                <h3 class="svc-title">Public Sector &amp; Civic-Tech Platforms</h3>
+                <p class="svc-desc">Transparency, accountability, case-management, and public-data systems designed for government agencies, NGOs, and civic organizations.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="svc-marquee" aria-label="Jump to a service"><div class="svc-track"></div></div>
+  </section>
+
+  <!-- ===== TECH STACK (orbiting cards + icon strip) ===== -->
+  <section id="expertise">
+    <div class="wrap">
+      <div class="sec-hdr fade">
+        <h2 class="sec-title">Tech Stack</h2>
+        <p class="sec-desc">I work across the full product surface schema design, API architecture, frontend performance, and deployment pipelines. No feature is "someone else's problem."</p>
+        <p class="sec-desc" style="margin-top:8px;">Every tool listed has been used on a production project with real users.</p>
+      </div>
+
+      <div class="orbit fade">
+        <div class="orbit-ring">
+          <div class="skill-card" style="--i:0"><div class="sk-cat">Frontend</div><div class="sk-items"><div class="sk-item">React 18 / Next.js 14</div><div class="sk-item">TypeScript</div><div class="sk-item">Tailwind CSS</div><div class="sk-item">Vite</div><div class="sk-item">Framer Motion</div><div class="sk-item">HTML5 / CSS3</div></div></div>
+          <div class="skill-card" style="--i:1"><div class="sk-cat">Backend</div><div class="sk-items"><div class="sk-item">Node.js / Express</div><div class="sk-item">PostgreSQL</div><div class="sk-item">Supabase</div><div class="sk-item">Prisma ORM</div><div class="sk-item">Redis</div><div class="sk-item">tRPC</div><div class="sk-item">REST APIs</div></div></div>
+          <div class="skill-card" style="--i:2"><div class="sk-cat">DevOps</div><div class="sk-items"><div class="sk-item">Vercel Edge</div><div class="sk-item">Render</div><div class="sk-item">Docker</div><div class="sk-item">GitHub Actions</div><div class="sk-item">Cloudinary CDN</div><div class="sk-item">Nginx</div><div class="sk-item">Linux</div></div></div>
+          <div class="skill-card" style="--i:3"><div class="sk-cat">Integrations</div><div class="sk-items"><div class="sk-item">M-Pesa Daraja API</div><div class="sk-item">WhatsApp Cloud API</div><div class="sk-item">OpenAI API</div><div class="sk-item">Stripe</div><div class="sk-item">Zod validation</div><div class="sk-item">JWT / RBAC</div></div></div>
+          <div class="skill-card" style="--i:4"><div class="sk-cat">Security &amp; Auth</div><div class="sk-items"><div class="sk-item">JWT</div><div class="sk-item">RBAC</div><div class="sk-item">OAuth</div><div class="sk-item">RLS Policies</div><div class="sk-item">Rate Limiting</div></div></div>
+          <div class="skill-card" style="--i:5"><div class="sk-cat">Production Systems</div><div class="sk-items"><div class="sk-item">Sentry</div><div class="sk-item">PostHog</div><div class="sk-item">BullMQ</div><div class="sk-item">Background Jobs</div><div class="sk-item">Caching</div></div></div>
+        </div>
+      </div>
+      <p class="orbit-hint">Drag or swipe to spin</p>
+
+      <div class="marquee fade" aria-label="Technologies I work with">
+        <div class="marq-row" data-row="0"></div>
+        <div class="marq-row rev" data-row="1"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-hdr fade">
+        <h2 class="sec-title">Experience</h2>
+        <p class="sec-desc">Building software products and business systems since 2023.</p>
+      </div>
+      <div class="exp-list">
+        <div class="exp-row fade">
+          <div class="exp-meta">
+            <div class="exp-role">Independent Full-Stack Developer</div>
+            <div class="exp-co">Self-Employed · Kenya</div>
+            <div class="exp-date">2023 – Present</div>
+          </div>
+          <div class="exp-content">
+            <p class="exp-desc">I design, build, and deploy web applications and business systems, handling everything from architecture and development to integrations, deployment, and maintenance.</p>
+            <p class="exp-desc" style="margin-top: 12px;">Projects include UWAZI, business websites, automation tools, and operational systems.</p>
+          </div>
+        </div>
+        <div class="exp-row fade">
+          <div class="exp-meta">
+            <div class="exp-role">Areas of Impact</div>
+            <div class="exp-co">Core Competencies</div>
+          </div>
+          <div class="exp-content">
+            <ul class="exp-bullets">
+              <li>Product architecture and deployment</li>
+              <li>M-Pesa, WhatsApp Cloud API, Supabase, and PostgreSQL integrations</li>
+              <li>Civic technology, e-commerce, automation, and business systems</li>
+              <li>Projects from initial idea through launch and support</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-row fade">
+          <div class="exp-meta">
+            <div class="exp-role">Technical Development</div>
+            <div class="exp-co">Independent Research &amp; Production Work</div>
+          </div>
+          <div class="exp-content">
+            <p class="exp-desc">I continue to sharpen my skills through real projects, working with modern web development, databases, security, performance, DevOps, and scalable system design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="fade">
+          <h2 class="sec-title">Building software that solves real problems.</h2>
+          <p class="about-p">Independent full-stack developer since 2023. I build e-commerce, automation and civic-tech systems, from the first idea to launch and support.</p>
+        </div>
+        <div class="hang fade">
+          <div class="hang-card" style="--i:0"><div class="ap-title">Business Problems Before Technology</div><div class="ap-desc">I start with the problem and the people, then pick the tools.</div></div>
+          <div class="hang-card" style="--i:1"><div class="ap-title">End-to-End Ownership</div><div class="ap-desc">Database, APIs, deployment and maintenance, all handled.</div></div>
+          <div class="hang-card" style="--i:2"><div class="ap-title">Built for Real-World Usage</div><div class="ap-desc">Mobile-first, payment-ready and practical.</div></div>
+          <div class="hang-card" style="--i:3"><div class="ap-title">Performance, Security &amp; Reliability</div><div class="ap-desc">Maintainable code that stays fast, safe and stable.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS (right-to-left marquee) ===== -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="sec-hdr fade">
+        <h2 class="sec-title">What my clients say</h2>
+        <p class="sec-desc">Feedback from clients and business owners I've worked with.</p>
+      </div>
+    </div>
+    <div class="t-marquee" aria-label="Client testimonials">
+      <div class="t-track">
+        <figure class="t-card"><span class="qicon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 18c0-6 3-10 9-12l1 2.2C11 9.4 9.7 11 9.4 13H14v11H4V18zm14 0c0-6 3-10 9-12l1 2.2c-3 1.2-4.3 2.8-4.6 4.8H28v11H18V18z"/></svg></span><div class="t-stars">★★★★★</div><blockquote class="t-quote">“John was easy to work with and delivered the e-commerce platform on time. He handled the technical side, including the M-Pesa integration, and the final system made things much easier for us.”</blockquote><figcaption class="t-by"><span class="t-av">ND</span><span><span class="t-name">Niks Digital Connections</span><span class="t-role">Business Owner</span></span></figcaption></figure>
+        <figure class="t-card"><span class="qicon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 18c0-6 3-10 9-12l1 2.2C11 9.4 9.7 11 9.4 13H14v11H4V18zm14 0c0-6 3-10 9-12l1 2.2c-3 1.2-4.3 2.8-4.6 4.8H28v11H18V18z"/></svg></span><div class="t-stars">★★★★★</div><blockquote class="t-quote">“John did a great job on our website. He handled the development, SEO, email setup, and deployment, and was available when we needed technical support.”</blockquote><figcaption class="t-by"><span class="t-av">KW</span><span><span class="t-name">Karen West Natural Spring</span><span class="t-role">Management Team</span></span></figcaption></figure>
+        <figure class="t-card"><span class="qicon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 18c0-6 3-10 9-12l1 2.2C11 9.4 9.7 11 9.4 13H14v11H4V18zm14 0c0-6 3-10 9-12l1 2.2c-3 1.2-4.3 2.8-4.6 4.8H28v11H18V18z"/></svg></span><div class="t-stars">★★★★★</div><blockquote class="t-quote">“John was responsive and clear throughout the project. The final website matched what we needed, and it was easy to work with him from start to finish.”</blockquote><figcaption class="t-by"><span class="t-av">CL</span><span><span class="t-name">Client Feedback</span><span class="t-role">Project Stakeholder</span></span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="fade">
+          <h2 class="sec-title" style="margin-bottom:12px;">Let's discuss your next project.</h2>
+          <p class="contact-copy">Tell me what you're building and I'll reply within 24 hours. Based in Nairobi, working with clients worldwide.</p>
+          <div class="clinks">
+            <a href="mailto:mwaura.ke.john@gmail.com" class="clink"><div class="clink-icon">✉</div><div><div class="clink-lbl">Email</div><div class="clink-val">mwaura.ke.john@gmail.com</div></div></a>
+            <a href="https://linkedin.com/in/john-mwaura-dev" class="clink" target="_blank" rel="noopener"><div class="clink-icon">in</div><div><div class="clink-lbl">LinkedIn</div><div class="clink-val">linkedin.com/in/john-mwaura-dev</div></div></a>
+            <a href="https://github.com/MarcusKE-dev" class="clink" target="_blank" rel="noopener"><div class="clink-icon">&lt;&gt;</div><div><div class="clink-lbl">GitHub</div><div class="clink-val">github.com/MarcusKE-dev</div></div></a>
+            <a href="https://wa.me/254741104469" class="clink" target="_blank" rel="noopener"><div class="clink-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div><div><div class="clink-lbl">WhatsApp</div><div class="clink-val">+254 741104469</div></div></a>
+          </div>
+        </div>
+        <div class="fade">
+          <form class="form" id="cform" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="d237c80d-62ac-4016-b211-f63c858fe9b1">
+            <input type="hidden" name="subject" value="New message from Dev John">
+            <input type="checkbox" name="botcheck" style="display:none;">
+            <div class="frow">
+              <div class="fg"><label class="fl" for="fname">Name</label><input class="fi" type="text" id="fname" name="name" placeholder="John Doe" required /></div>
+              <div class="fg"><label class="fl" for="femail">Email</label><input class="fi" type="email" id="femail" name="email" placeholder="john@example.com" required /></div>
+            </div>
+            <div class="fg"><label class="fl" for="fphone">Phone Number</label><input class="fi" type="tel" id="fphone" name="phone" /></div>
+            <div class="fg"><label class="fl" for="fcompany">Company (Optional)</label><input class="fi" type="text" id="fcompany" name="company" placeholder="Company Name" /></div>
+            <div class="fg"><label class="fl">Service Required</label>
+              <div class="custom-select" data-name="service">
+                <div class="custom-select-trigger">Select a service...</div>
+                <div class="custom-select-options">
+                  <div data-value="Custom Web Application">Custom Web Application</div>
+                  <div data-value="Business Automation System">Business Automation System</div>
+                  <div data-value="E-Commerce Platform">E-Commerce Platform</div>
+                  <div data-value="API & Backend Development">API &amp; Backend Development</div>
+                  <div data-value="Admin Dashboard">Admin Dashboard</div>
+                  <div data-value="WhatsApp Integration">WhatsApp Integration</div>
+                  <div data-value="Corporate Website">Corporate Website</div>
+                  <div data-value="Technical Consultation">Technical Consultation</div>
+                  <div data-value="Other">Other</div>
+                </div>
+                <input type="hidden" name="service" class="custom-select-input">
+              </div>
+            </div>
+            <!-- Budget: USD first, with the approximate KSh equivalent beside it (about 130 KSh per USD).
+                 Change the numbers here whenever your rates change. -->
+            <div class="fg"><label class="fl">Estimated Budget</label>
+              <div class="custom-select" data-name="budget">
+                <div class="custom-select-trigger">Select budget range...</div>
+                <div class="custom-select-options">
+                  <div data-value="Under $500 (about KSh 65,000)">Under $500 &nbsp;·&nbsp; ≈ KSh 65,000</div>
+                  <div data-value="$500 – $1,500 (about KSh 65,000 – 195,000)">$500 – $1,500 &nbsp;·&nbsp; ≈ KSh 65,000 – 195,000</div>
+                  <div data-value="$1,500 – $3,000 (about KSh 195,000 – 390,000)">$1,500 – $3,000 &nbsp;·&nbsp; ≈ KSh 195,000 – 390,000</div>
+                  <div data-value="$3,000 – $7,500 (about KSh 390,000 – 975,000)">$3,000 – $7,500 &nbsp;·&nbsp; ≈ KSh 390,000 – 975,000</div>
+                  <div data-value="$7,500+ (about KSh 975,000+)">$7,500+ &nbsp;·&nbsp; ≈ KSh 975,000+</div>
+                  <div data-value="Open to Discussion">Open to Discussion</div>
+                </div>
+                <input type="hidden" name="budget" class="custom-select-input">
+              </div>
+            </div>
+            <div class="fg"><label class="fl">Project Timeline</label>
+              <div class="custom-select" data-name="timeline">
+                <div class="custom-select-trigger">Select timeline...</div>
+                <div class="custom-select-options">
+                  <div data-value="ASAP">ASAP</div>
+                  <div data-value="Within 1 Month">Within 1 Month</div>
+                  <div data-value="1–3 Months">1–3 Months</div>
+                  <div data-value="3+ Months">3+ Months</div>
+                  <div data-value="Flexible">Flexible</div>
+                </div>
+                <input type="hidden" name="timeline" class="custom-select-input">
+              </div>
+            </div>
+            <div class="fg"><label class="fl" for="fmessage">Project Details</label>
+              <textarea class="fta" id="fmessage" name="message" placeholder="Tell me about your project, business goals, target users, required functionality, and any deadlines or technical requirements." required></textarea>
+            </div>
+            <button type="submit" class="fsub" id="fsub">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              Discuss Your Project
+            </button>
+            <p class="form-note">Typical response time: within 24 hours.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-row">
+        <div>
+          <div class="footer-name">John</div>
+          <div class="footer-copy">© <span id="yr"></span> John · Full-Stack Developer · Kenya</div>
+        </div>
+        <a class="footer-brand" href="https://abcsystems.co.ke" target="_blank" rel="noopener">ABC Systems</a>
+        <div class="footer-right">
+          <div class="footer-links"><a href="#services">Services</a><a href="projects.html">Projects</a><a href="#about">About</a><a href="mailto:mwaura.ke.john@gmail.com">Email</a></div>
+          <div class="footer-socials"><a href="https://github.com/MarcusKE-dev" class="social-link" target="_blank" rel="noopener" title="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg></a><a href="https://linkedin.com/in/john-mwaura-dev" class="social-link" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg></a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

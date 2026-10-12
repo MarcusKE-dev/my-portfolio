@@ -56,9 +56,11 @@ fades.forEach(el => observer.observe(el));
 const themeToggle = document.getElementById('themeToggle');
 const sunIcon = document.querySelector('.theme-toggle .sun-icon');
 const moonIcon = document.querySelector('.theme-toggle .moon-icon');
+const root = document.documentElement;
+let themeBusy = false;
 
 function applyTheme(isLight) {
-  document.documentElement.classList.toggle('light', isLight);
+  root.classList.toggle('light', isLight);
   if (sunIcon && moonIcon) {
     sunIcon.style.display = isLight ? 'none' : 'block';
     moonIcon.style.display = isLight ? 'block' : 'none';
@@ -73,35 +75,51 @@ let savedTheme = null;
 try { savedTheme = localStorage.getItem('theme'); } catch (_) {}
 if (savedTheme === 'light') applyTheme(true);
 
+const THEME_MS = 1400;
+const THEME_EASE = 'cubic-bezier(.45, 0, .25, 1)';
+
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
-    const toLight = !document.documentElement.classList.contains('light');
+    if (themeBusy) return;
+    const toLight = !root.classList.contains('light');
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!document.startViewTransition || reduce) return applyTheme(toLight);
 
-    // Both circles are centred on the middle of the screen
+    if (reduce) return applyTheme(toLight);
+
+    if (!document.startViewTransition) {
+      root.classList.add('theme-fade');
+      applyTheme(toLight);
+      setTimeout(() => root.classList.remove('theme-fade'), 800);
+      return;
+    }
+
+    themeBusy = true;
     const cx = window.innerWidth / 2;
     const cy = window.innerHeight / 2;
     const radius = Math.hypot(cx, cy);
 
-    document.documentElement.dataset.vt = toLight ? 'to-light' : 'to-dark';
+    root.classList.add('theme-switching');
+    root.dataset.vt = toLight ? 'to-light' : 'to-dark';
     const transition = document.startViewTransition(() => applyTheme(toLight));
 
     transition.ready.then(() => {
       if (toLight) {
-        // Light mode: a circle opens from the centre and grows outwards
-        document.documentElement.animate(
+        root.animate(
           { clipPath: [`circle(0px at ${cx}px ${cy}px)`, `circle(${radius}px at ${cx}px ${cy}px)`] },
-          { duration: 900, easing: 'cubic-bezier(.22,1,.36,1)', pseudoElement: '::view-transition-new(root)' }
+          { duration: THEME_MS, easing: THEME_EASE, fill: 'both', pseudoElement: '::view-transition-new(root)' }
         );
       } else {
-        // Dark mode: a circle closes from the edges and meets in the centre
-        document.documentElement.animate(
+        root.animate(
           { clipPath: [`circle(${radius}px at ${cx}px ${cy}px)`, `circle(0px at ${cx}px ${cy}px)`] },
-          { duration: 900, easing: 'cubic-bezier(.65,0,.35,1)', pseudoElement: '::view-transition-old(root)' }
+          { duration: THEME_MS, easing: THEME_EASE, fill: 'both', pseudoElement: '::view-transition-old(root)' }
         );
       }
+    }).catch(() => {});
+
+    transition.finished.finally(() => {
+      root.classList.remove('theme-switching');
+      delete root.dataset.vt;
+      themeBusy = false;
     });
-    transition.finished.finally(() => { delete document.documentElement.dataset.vt; });
   });
 }
