@@ -1,0 +1,378 @@
+[
+  {
+    "slug": "about",
+    "title": "About John Mwaura (Dev John) | Web Developer in Kenya",
+    "description": "Meet John Mwaura, known online as Dev John. Independent developer in Kenya since 2023 and founder of ABC Systems. How I work and who I build for.",
+    "h1": "About John Mwaura",
+    "canonical": "https://devjohn.site/about/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "About John Mwaura",
+        "url": "/about/"
+      }
+    ],
+    "schemaType": "ProfilePage",
+    "include": {
+      "pricing": false,
+      "form": false,
+      "stack": true
+    },
+    "indexable": true
+  },
+  {
+    "slug": "pricing",
+    "title": "Web Development Pricing in KSh and USD | Dev John",
+    "description": "Starting prices for websites and software from KSh 10,000 or $100. See what each package includes and what changes the final price.",
+    "h1": "Website and software pricing",
+    "canonical": "https://devjohn.site/pricing/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Website and software pricing",
+        "url": "/pricing/"
+      }
+    ],
+    "schemaType": "WebPage",
+    "include": {
+      "pricing": true,
+      "form": false,
+      "stack": false
+    },
+    "indexable": true
+  },
+  {
+    "slug": "services",
+    "title": "Web and Software Development Services | Dev John",
+    "description": "Websites, online stores, APIs, dashboards, WhatsApp automation and custom software from John Mwaura in Kenya. See what I build and how projects run.",
+    "h1": "Web and software development services",
+    "canonical": "https://devjohn.site/services/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Web and software development services",
+        "url": "/services/"
+      }
+    ],
+    "schemaType": "CollectionPage",
+    "include": {
+      "pricing": false,
+      "form": false,
+      "stack": false
+    },
+    "indexable": true
+  },
+  {
+    "slug": "services/web-development",
+    "title": "Business Website Development in Kenya | Dev John",
+    "description": "Fast, mobile-friendly business websites built in Kenya for local and overseas clients. Landing pages from KSh 10,000 or $100, with basic SEO included.",
+    "h1": "Business website development",
+    "canonical": "https://devjohn.site/services/web-development/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Services",
+        "url": "/services/"
+      },
+      {
+        "name": "Business website development",
+        "url": "/services/web-development/"
+      }
+    ],
+    "schemaType": "Service",
+    "include": {
+      "pricing": false,
+      "form": false,
+      "stack": false
+    },
+    "indexable": true
+  },
+  {
+    "slug": "services/ecommerce-development",
+    "title": "E-commerce Website Development with M-Pesa | Dev John",
+    "description": "Online stores with product catalogues, cart, checkout and M-Pesa payments. Starting from KSh 35,000 or $350, built by John Mwaura in Kenya.",
+    "h1": "E-commerce website development",
+    "canonical": "https://devjohn.site/services/ecommerce-development/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Services",
+        "url": "/services/"
+      },
+      {
+        "name": "E-commerce website development",
+        "url": "/services/ecommerce-development/"
+      }
+    ],
+    "schemaType": "Service",
+    "include": {
+      "pricing": false,
+      "form": false,
+      "stack": false
+    },
+    "indexable": true
+  },
+  {
+    "slug": "services/custom-software-development",
+    "title": "Custom Software Development in Kenya | Dev John",
+    "description": "Purpose-built business software: forms, workflows, dashboards and admin tools. Starting from KSh 40,000 or $400 for smaller, clearly scoped projects.",
+    "h1": "Custom software development",
+    "canonical": "https://devjohn.site/services/custom-software-development/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Services",
+        "url": "/services/"
+      },
+      {
+        "name": "Custom software development",
+        "url": "/services/custom-software-development/"
+      }
+    ],
+    "schemaType": "Service",
+    "include": {
+      "pricing": false,
+      "form": false,
+      "stack": false
+    },
+    "indexable": true
+  },
+  {
+    "slug": "services/whatsapp-automation",
+    "title": "WhatsApp Automation for Business | Dev John",
+    "description": "WhatsApp Cloud API automation that captures leads, takes orders and sends updates, connected to your existing tools. Built in Kenya, used anywhere.",
+    "h1": "WhatsApp automation for business",
+    "canonical": "https://devjohn.site/services/whatsapp-automation/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Services",
+        "url": "/services/"
+      },
+      {
+        "name": "WhatsApp automation for business",
+        "url": "/services/whatsapp-automation/"
+      }
+    ],
+    "schemaType": "Service",
+    "include": {
+      "pricing": false,
+      "form": false,
+      "stack": false
+    },
+    "indexable": true
+  },
+  {
+    "slug": "web-developer-kenya",
+    "title": "Web Developer in Kenya | Dev John (John Mwaura)",
+    "description": "Hire a web developer in Kenya for business websites, M-Pesa shops and custom software. Prices in KSh, WhatsApp contact and a reply within 24 hours.",
+    "h1": "Web developer in Kenya",
+    "canonical": "https://devjohn.site/web-developer-kenya/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Web developer in Kenya",
+        "url": "/web-developer-kenya/"
+      }
+    ],
+    "schemaType": "WebPage",
+    "include": {
+      "pricing": false,
+      "form": false,
+      "stack": false
+    },
+    "indexable": true
+  },
+  {
+    "slug": "web-developer-east-africa",
+    "title": "Web Developer for Uganda and Tanzania | Dev John",
+    "description": "Remote web development for businesses in Uganda and Tanzania from a Kenya-based developer in the same time zone. Websites, shops and custom software.",
+    "h1": "Web developer for Uganda and Tanzania",
+    "canonical": "https://devjohn.site/web-developer-east-africa/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Web developer for Uganda and Tanzania",
+        "url": "/web-developer-east-africa/"
+      }
+    ],
+    "schemaType": "WebPage",
+    "include": {
+      "pricing": false,
+      "form": false,
+      "stack": false
+    },
+    "indexable": true
+  },
+  {
+    "slug": "web-developer-nigeria",
+    "title": "Web Developer for Nigerian Businesses | Dev John",
+    "description": "Remote web and software development for Nigerian businesses, working from Kenya with only two hours of time difference. USD pricing and WhatsApp contact.",
+    "h1": "Web developer for Nigerian businesses",
+    "canonical": "https://devjohn.site/web-developer-nigeria/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Web developer for Nigerian businesses",
+        "url": "/web-developer-nigeria/"
+      }
+    ],
+    "schemaType": "WebPage",
+    "include": {
+      "pricing": false,
+      "form": false,
+      "stack": false
+    },
+    "indexable": true
+  },
+  {
+    "slug": "international-clients",
+    "title": "Hire a Kenyan Web Developer | USA, Canada, UK | Dev John",
+    "description": "How I work with clients in the USA, Canada and the UK: USD pricing, written scope, time zone overlap and clear project updates from Kenya.",
+    "h1": "Working with international clients",
+    "canonical": "https://devjohn.site/international-clients/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Working with international clients",
+        "url": "/international-clients/"
+      }
+    ],
+    "schemaType": "WebPage",
+    "include": {
+      "pricing": false,
+      "form": false,
+      "stack": false
+    },
+    "indexable": true
+  },
+  {
+    "slug": "faq",
+    "title": "Web Development FAQ: Pricing, Process, Payments | Dev John",
+    "description": "Answers to common questions about hiring John Mwaura (Dev John): pricing, working with international clients, M-Pesa, custom software and contact.",
+    "h1": "Frequently asked questions",
+    "canonical": "https://devjohn.site/faq/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Frequently asked questions",
+        "url": "/faq/"
+      }
+    ],
+    "schemaType": "FAQPage",
+    "include": {
+      "pricing": false,
+      "form": false,
+      "stack": false
+    },
+    "indexable": true
+  },
+  {
+    "slug": "contact",
+    "title": "Contact Dev John | Start a Web or Software Project",
+    "description": "Message John Mwaura on WhatsApp or email, or send the project form. Replies within 24 hours. Open to clients in Kenya and worldwide.",
+    "h1": "Contact",
+    "canonical": "https://devjohn.site/contact/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Contact",
+        "url": "/contact/"
+      }
+    ],
+    "schemaType": "ContactPage",
+    "include": {
+      "pricing": false,
+      "form": true,
+      "stack": false
+    },
+    "indexable": true
+  },
+  {
+    "slug": "privacy",
+    "title": "Privacy Policy and Contact Information | Dev John",
+    "description": "How devjohn.site handles information you send through the contact form, WhatsApp links and email, plus browser theme storage and deletion requests.",
+    "h1": "Privacy policy",
+    "canonical": "https://devjohn.site/privacy/",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Privacy policy",
+        "url": "/privacy/"
+      }
+    ],
+    "schemaType": "WebPage",
+    "include": {
+      "pricing": false,
+      "form": false,
+      "stack": false
+    },
+    "indexable": true
+  },
+  {
+    "slug": "404",
+    "title": "Page Not Found | Dev John, Web and Software Developer",
+    "description": "This page could not be found. Find business websites, online stores, software, pricing and contact details on the Dev John website.",
+    "h1": "Page not found",
+    "canonical": "https://devjohn.site/404.html",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Page not found",
+        "url": "/404.html"
+      }
+    ],
+    "schemaType": "WebPage",
+    "include": {
+      "pricing": false,
+      "form": false,
+      "stack": false
+    },
+    "indexable": false
+  }
+]

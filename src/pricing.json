@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Landing Page",
+    "description": "A focused, responsive page for a business, service, product or campaign.",
+    "kes": "KSh 10,000+",
+    "usd": "$100+",
+    "features": [
+      "One-page website design",
+      "Mobile and desktop responsiveness",
+      "WhatsApp and click-to-call buttons",
+      "Contact or enquiry form",
+      "Basic on-page SEO setup",
+      "Clear calls to action"
+    ]
+  },
+  {
+    "name": "Basic Website",
+    "description": "A simple online presence for individuals, freelancers and small businesses.",
+    "kes": "KSh 15,000+",
+    "usd": "$150+",
+    "features": [
+      "Up to 3 website pages",
+      "Responsive layout",
+      "Business information and service sections",
+      "Contact details and WhatsApp integration",
+      "Contact form",
+      "Basic SEO setup"
+    ]
+  },
+  {
+    "name": "Business Website",
+    "description": "A professional website for businesses that need more room to present their services and build credibility.",
+    "kes": "KSh 20,000+",
+    "usd": "$200+",
+    "features": [
+      "Up to 5 website pages",
+      "Customised business-focused design",
+      "About, services and contact sections",
+      "Responsive desktop and mobile layouts",
+      "Enquiry form and WhatsApp contact",
+      "Basic SEO setup",
+      "Social media and location links where appropriate"
+    ]
+  },
+  {
+    "name": "Professional Website",
+    "description": "A more detailed website for established or growing businesses that need a stronger online presence.",
+    "kes": "KSh 30,000+",
+    "usd": "$300+",
+    "features": [
+      "Up to 8 website pages",
+      "More tailored page layouts and visual presentation",
+      "Expanded service or business information",
+      "Product or service catalogue showcase",
+      "Contact and enquiry forms",
+      "Responsive design",
+      "Basic SEO setup"
+    ]
+  },
+  {
+    "name": "E-commerce Website",
+    "description": "A starter online store that allows customers to browse products and place orders online.",
+    "kes": "KSh 35,000+",
+    "usd": "$350+",
+    "features": [
+      "Online product catalogue",
+      "Product categories and product details",
+      "Shopping cart and checkout flow",
+      "Order submission and management",
+      "Basic store administration",
+      "Responsive design",
+      "Payment integration appropriate to the agreed project scope"
+    ]
+  },
+  {
+    "name": "Custom Software",
+    "description": "Small, purpose-built software solutions designed around specific business processes.",
+    "kes": "KSh 40,000+",
+    "usd": "$400+",
+    "features": [
+      "Custom functionality based on agreed requirements",
+      "Business forms and data-management workflows",
+      "A suitable administrative interface where required",
+      "Basic reporting or dashboard functionality where appropriate",
+      "Responsive web interface",
+      "Deployment and handover"
+    ]
+  },
+  {
+    "name": "Advanced Platforms and Custom Products",
+    "description": "For projects that require more specialised functionality or a larger development scope.",
+    "kes": "Custom Quote",
+    "usd": null,
+    "features": [
+      "Multi-vendor marketplaces",
+      "SaaS products",
+      "Booking and reservation platforms",
+      "Business management systems",
+      "Advanced dashboards and internal platforms",
+      "Complex API integrations",
+      "Other specialised web applications"
+    ]
+  }
+]
