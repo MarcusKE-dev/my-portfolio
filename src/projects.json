@@ -1,1 +1,226 @@
-[]
+[
+  {
+    "name": "UWAZI \u2014 Kenya Finance Transparency Platform",
+    "description": "A public accountability platform designed to make government expenditure searchable, traceable, and easier to investigate. Citizens can explore financial records, submit cases, and track investigation workflows through a centralized transparency dashboard.",
+    "image": "/images/uwazi.png",
+    "links": [
+      "https://uwazi-doc.vercel.app/"
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Supabase",
+      "Vercel"
+    ],
+    "anchor": "project-1"
+  },
+  {
+    "name": "Mboroti Healthcare Clinic",
+    "description": "A modern healthcare website designed to make clinical services, patient information, and appointment booking easily accessible online. The platform provides clear information about medical services, the clinical team, healthcare resources, and direct communication with the facility.",
+    "image": "/images/mboroti.png",
+    "links": [
+      "https://github.com/MarcusKE-dev/mboroti-healthcare",
+      "https://mborotihealthcare.co.ke"
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Cloudflare"
+    ],
+    "anchor": "project-2"
+  },
+  {
+    "name": "Dalo Plumbing Solutions",
+    "description": "A modern, responsive business website built for a professional plumbing company. The platform focuses on a strong visual identity, mobile-first experience, fast performance, local SEO, service presentation, customer trust, and conversion-focused contact experiences.",
+    "image": "/images/dalo-plumbing.png",
+    "links": [
+      "https://github.com/MarcusKE-dev/Dalo-Plumbing",
+      "https://www.daloplumbing.co.ke/"
+    ],
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "SEO"
+    ],
+    "anchor": "project-3"
+  },
+  {
+    "name": "Skinner's Restaurant",
+    "description": "A responsive, modern online platform for Skinner's Restaurant designed to showcase menu offerings, dining experience, and facilitate customer engagement and reservations with an elegant web interface.",
+    "image": "/images/skinners.png",
+    "links": [
+      "https://github.com/MarcusKE-dev/Skinners-restaurant",
+      "https://skinners-restaurant.pages.dev"
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Cloudflare Pages"
+    ],
+    "anchor": "project-4"
+  },
+  {
+    "name": "Niks Digital Connections",
+    "description": "A modern commerce platform built for electronics retail operations. The system combines product management, inventory tracking, secure M-Pesa payments, and streamlined order fulfillment to support day-to-day business growth.",
+    "image": "/images/niks.png",
+    "links": [
+      "https://github.com/MarcusKE-dev/niks-digital",
+      "https://niksdigital.co.ke"
+    ],
+    "stack": [
+      "Next.js 14",
+      "TypeScript",
+      "Supabase",
+      "M-Pesa Daraja",
+      "Cloudinary"
+    ],
+    "anchor": "project-5"
+  },
+  {
+    "name": "ABC Docs",
+    "description": "A specialized business document generator for creating professional contracts, quotes, proposals, invoices, agreements, receipts, and other vital business documentation with automated templating and formatting.",
+    "image": "/images/abc-docs.png",
+    "links": [
+      "https://github.com/MarcusKE-dev/abc-docs",
+      "https://docs.abcsystems.co.ke"
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "PDF Generation"
+    ],
+    "anchor": "project-6"
+  },
+  {
+    "name": "ABC Systems",
+    "description": "A modern technology company website built to present ABC Systems' digital solutions, software products, and technology services to businesses. The platform provides a clear foundation for showcasing custom software, business systems, automation, and digital solutions while establishing a professional online presence for the company.",
+    "image": "/images/abc-systems.png",
+    "links": [
+      "https://github.com/MarcusKE-dev/abc-systems",
+      "https://abcsystems.co.ke"
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Cloudflare"
+    ],
+    "anchor": "project-7"
+  },
+  {
+    "name": "FlowBiz POS",
+    "description": "A complete point-of-sale system that empowers businesses to seamlessly track inventory, purchases, expenses, and overall business operations. Built to handle daily cashier management, send automated WhatsApp reminders, generate detailed PDF reports, and track every business activity in real-time.",
+    "image": "/images/flowbiz.png",
+    "links": [
+      "https://github.com/MarcusKE-dev/flowbiz-pos",
+      "https://flowbiz.co.ke/demo"
+    ],
+    "stack": [
+      "React",
+      "Firebase",
+      "Firestore",
+      "Tailwind CSS",
+      "React Router"
+    ],
+    "anchor": "project-8"
+  },
+  {
+    "name": "Karen West Custom Packaging & Branding",
+    "description": "An enterprise-grade B2B packaging and branding showcase designed for corporate events, weddings, and hospitality. Features a visual 5-step laboratory purification pipeline, a dynamic label configurator, and direct WhatsApp quote dispatch, built with a clean, clinical design architecture.",
+    "image": "/images/karenwest.png",
+    "links": [
+      "https://github.com/MarcusKE-dev/karen-west-portfolio",
+      "https://karenwest.vercel.app"
+    ],
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "WhatsApp API"
+    ],
+    "anchor": "project-9"
+  },
+  {
+    "name": "Charles Upholstery Digital Platform",
+    "description": "A premium digital storefront and lead generation engine engineered for a luxury upholstery studio. Features high-fidelity media rendering optimized for showcasing design craftsmanship, coupled with an automated customer onboarding system that securely captures and routes high-intent project configurations directly to the operational mailbox.",
+    "image": "/images/upholstery.png",
+    "links": [
+      "https://github.com/MarcusKE-dev/upholstery-portfolio",
+      "https://charles-interiors.vercel.app"
+    ],
+    "stack": [
+      "Next.js 14",
+      "TypeScript",
+      "Tailwind CSS",
+      "Formspree API",
+      "Squoosh Media Engine"
+    ],
+    "anchor": "project-10"
+  },
+  {
+    "name": "Karen West Natural Spring",
+    "description": "A conversion-focused business website combining local SEO, customer inquiry management, transactional email workflows, and search visibility optimisation. Built to strengthen online presence while supporting operational efficiency.",
+    "image": "/images/karen-west.png",
+    "links": [
+      "https://github.com/MarcusKE-dev/karen-west-natural-springs",
+      "https://karenwestwater.co.ke"
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "Supabase",
+      "Resend",
+      "SEO"
+    ],
+    "anchor": "project-11"
+  },
+  {
+    "name": "Focus List \u2013 Task, Time & AI",
+    "description": "A mobile\u2011first productivity tool that combines task management, Pomodoro timing, focus sounds (brown, white, pink, rain, ocean), and an AI assistant \u2013 all wrapped in a Capacitor\u2011driven native Android APK. Task reminders and timer alerts are delivered via background\u2011ready local notifications. AI is powered by Groq\u2019s Llama 3.1 model through a Cloudflare Worker proxy, keeping API keys secure. Templates, daily insights, notes, and full backup/restore make it a complete daily driver.",
+    "image": "/images/focus-app.png",
+    "links": [
+      "https://github.com/MarcusKE-dev/focus-app",
+      "https://my-focus-beta.vercel.app/",
+      "https://github.com/MarcusKE-dev/focus-app/releases/download/v1.0.0/focus.apk"
+    ],
+    "stack": [
+      "Vanilla JavaScript",
+      "Web Audio API",
+      "Capacitor (Android Native)",
+      "Cloudflare Workers",
+      "Groq AI",
+      "Chart.js",
+      "CSS Variables"
+    ],
+    "anchor": "project-12"
+  },
+  {
+    "name": "Chatbot-KE: Contextual AI Assistant",
+    "description": "A responsive, dark-mode conversational interface engineered for technical problem-solving and general knowledge ingestion. Features dynamic Markdown parsing with collapsible syntax-highlighted blocks for complex code rendering, paired with hands-free prompt dictation via the native Web Speech API and an in-memory ephemeral state system to preserve user context windows natively throughout the active session lifecycle.",
+    "image": "/images/chatbot.png",
+    "links": [
+      "https://github.com/MarcusKE-dev/Chatbot",
+      "https://chatbot-ke.vercel.app",
+      "https://abcsystems.co.ke",
+      "https://github.com/MarcusKE-dev",
+      "https://linkedin.com/in/john-mwaura-dev"
+    ],
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Web Speech API",
+      "Markdown Parser",
+      "Vercel Edge"
+    ],
+    "anchor": "project-13"
+  }
+]

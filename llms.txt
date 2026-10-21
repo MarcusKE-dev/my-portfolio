@@ -1,0 +1,17 @@
+# Dev John (John Mwaura)
+
+> Dev John is the working name of John Mwaura, an independent web and software developer in Kenya. He builds business websites, online stores, custom software and WhatsApp automation for clients in Kenya, East Africa, Nigeria, the USA, Canada and the UK. He is the founder of ABC Systems.
+
+## Key pages
+- [About](https://devjohn.site/about/): who John Mwaura is and how he works
+- [Pricing](https://devjohn.site/pricing/): starting prices in KSh and USD
+- [Services](https://devjohn.site/services/): what he builds
+- [Projects](https://devjohn.site/projects.html): real projects with live links
+- [International clients](https://devjohn.site/international-clients/): how remote work with overseas clients runs
+- [Contact](https://devjohn.site/contact/): WhatsApp, email and the project form
+
+## Facts
+- Location: Kenya. Time zone: East Africa Time (UTC+3).
+- Reply time: within 24 hours.
+- Starting prices: from KSh 10,000 or $100.
+- Founder of ABC Systems: https://abcsystems.co.ke

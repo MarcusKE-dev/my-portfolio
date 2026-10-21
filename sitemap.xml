@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://devjohn.site/</loc>
-  </url>
-  <url>
-    <loc>https://devjohn.site/projects.html</loc>
-  </url>
+  <url><loc>https://devjohn.site/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://devjohn.site/projects.html</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://devjohn.site/about/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://devjohn.site/pricing/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://devjohn.site/faq/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://devjohn.site/contact/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://devjohn.site/privacy/</loc><lastmod>2026-10-21</lastmod></url>
 </urlset>
