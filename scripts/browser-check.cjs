@@ -50,6 +50,10 @@ const server=http.createServer((req,res)=>{
    if(await page.locator('#navtoggle').isVisible()){
     await page.locator('#navtoggle').focus();await page.keyboard.press('Enter');await page.waitForTimeout(15);
     assert.equal(await page.locator('#navtoggle').getAttribute('aria-expanded'),'true');
+    const menuBounds=await page.locator('#drawer').evaluate(e=>({top:e.getBoundingClientRect().top,bottom:e.getBoundingClientRect().bottom,header:document.getElementById('nav').getBoundingClientRect().bottom,height:innerHeight}));
+    assert(menuBounds.top>=menuBounds.header-.5&&menuBounds.bottom<=menuBounds.height+.5,url+' drawer outside available viewport');
+    assert.equal(await page.locator('#drawer a').first().textContent(),'All services');
+    assert.equal(await page.locator('#drawer a').first().getAttribute('href'),'/services/');
     await page.keyboard.press('Tab');assert.equal(await page.evaluate(()=>document.activeElement.closest('#drawer')?.id),'drawer');
     await page.keyboard.press('Escape');
     if(url!=='/')assert.equal(await page.evaluate(()=>document.activeElement.id),'navtoggle');
@@ -78,6 +82,10 @@ const server=http.createServer((req,res)=>{
   await p.locator('#themeToggle').click();await p.waitForTimeout(1550);
   assert.equal(await p.evaluate(()=>document.documentElement.classList.contains('light')),false);
  }
+ await p.goto(origin+'/about/',{waitUntil:'load'});
+ await p.locator('.marquee').scrollIntoViewIfNeeded();await p.mouse.move(0,0);
+ const techRows=await p.locator('.marq-row').evaluateAll(rows=>rows.map(r=>({animation:getComputedStyle(r).animationName,direction:getComputedStyle(r).animationDirection,wrap:getComputedStyle(r).flexWrap})));
+ assert.deepEqual(techRows,[{animation:'marq',direction:'normal',wrap:'nowrap'},{animation:'marq',direction:'reverse',wrap:'nowrap'}]);
  await p.goto(origin+'/contact/',{waitUntil:'load'});
  for(const select of await p.locator('.custom-select').all()){
   const trigger=select.locator('.custom-select-trigger');await trigger.focus();await p.keyboard.press('ArrowDown');

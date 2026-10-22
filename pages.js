@@ -1,22 +1,4 @@
-// Accessibility additions for generated pages. Shared script.js is unchanged.
-const menu = document.getElementById('drawer');
-const menuButton = document.getElementById('navtoggle');
-menuButton.setAttribute('aria-controls', 'drawer');
-function syncMenu() {
-  menu.inert = !menu.classList.contains('open');
-  menu.setAttribute('aria-modal', String(!menu.inert));
-}
-syncMenu();
-new MutationObserver(syncMenu).observe(menu, {attributes:true, attributeFilter:['class']});
-document.addEventListener('keydown', event => {
-  if (menu.inert) return;
-  if (event.key === 'Escape') { menuButton.focus(); return; }
-  if (event.key !== 'Tab') return;
-  const items = [menuButton, ...menu.querySelectorAll('a')];
-  const first = items[0], last = items.at(-1);
-  if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-  else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-});
+// Page-specific form and local-anchor accessibility enhancements.
 // Keep the original click handlers and hidden values; add keyboard controls.
 document.querySelectorAll('.custom-select').forEach((select, i) => {
   const trigger = select.querySelector('.custom-select-trigger');
@@ -75,13 +57,6 @@ document.addEventListener('click', event => {
   event.preventDefault(); event.stopImmediatePropagation();
   target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
   if(id==='main') { target.tabIndex=-1; target.focus({preventScroll:true}); }
-},true);
-// Close before the shared Escape handler, then restore focus to the opener.
-document.addEventListener('keydown',event=>{
-  if(event.key==='Escape'&&menu.classList.contains('open')) {
-    event.preventDefault(); event.stopImmediatePropagation();
-    menuButton.click(); menuButton.focus();
-  }
 },true);
 
 // Reserve space for decorative icons created by the existing shared script.

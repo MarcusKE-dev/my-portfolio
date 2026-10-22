@@ -10,11 +10,19 @@ window.addEventListener('scroll', () => {
 const toggle = document.getElementById('navtoggle');
 const drawer = document.getElementById('drawer');
 let drawerOpen = false;
+const updateNavHeight = () => document.documentElement.style.setProperty('--nav-height', `${nav.offsetHeight}px`);
+updateNavHeight();
+new ResizeObserver(updateNavHeight).observe(nav);
+toggle.setAttribute('aria-controls', 'drawer');
+drawer.inert = true;
+drawer.setAttribute('aria-modal', 'false');
 
 function openDrawer() {
   drawerOpen = true;
   toggle.classList.add('active');
   toggle.setAttribute('aria-expanded', 'true');
+  drawer.inert = false;
+  drawer.setAttribute('aria-modal', 'true');
   drawer.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -24,6 +32,8 @@ function closeDrawer() {
   toggle.classList.remove('active');
   toggle.setAttribute('aria-expanded', 'false');
   drawer.classList.remove('open');
+  drawer.inert = true;
+  drawer.setAttribute('aria-modal', 'false');
   document.body.style.overflow = '';
 }
 
@@ -32,11 +42,10 @@ toggle.addEventListener('click', (e) => {
   drawerOpen ? closeDrawer() : openDrawer();
 });
 
-const NAV_HEIGHT = 64;
 function scrollToSection(id) {
   const el = document.getElementById(id);
   if (!el) return;
-  const top = el.getBoundingClientRect().top + window.pageYOffset - NAV_HEIGHT;
+  const top = el.getBoundingClientRect().top + window.pageYOffset - nav.offsetHeight;
   window.scrollTo({ top, behavior: 'smooth' });
 }
 
@@ -61,7 +70,30 @@ document.addEventListener('click', (e) => {
   if (drawerOpen && !drawer.contains(e.target) && !toggle.contains(e.target)) closeDrawer();
 });
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && drawerOpen) closeDrawer();
+  if (!drawerOpen) return;
+  if (e.key === 'Escape') {
+    e.preventDefault();
+    closeDrawer();
+    toggle.focus();
+  } else if (e.key === 'Tab') {
+    const links = [...drawer.querySelectorAll('a')];
+    if (e.shiftKey && document.activeElement === toggle) {
+      e.preventDefault();
+      links.at(-1)?.focus();
+    } else if (!e.shiftKey && document.activeElement === links.at(-1)) {
+      e.preventDefault();
+      toggle.focus();
+    }
+  }
+});
+
+// A menu opened on a phone must not keep desktop page scrolling locked.
+window.matchMedia('(min-width: 1051px)').addEventListener('change', (event) => {
+  if (event.matches && drawerOpen) {
+    const restoreFocus = drawer.contains(document.activeElement) || document.activeElement === toggle;
+    closeDrawer();
+    if (restoreFocus) nav.querySelector('.nav-menu a')?.focus();
+  }
 });
 
 // ===== SCROLL REVEAL =====

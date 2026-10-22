@@ -1,4 +1,4 @@
-/* Shared extensions. Existing home styles and scripts remain untouched. */
+/* Shared extensions for static pages and navigation. */
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
 .footer-directory { display:grid; grid-template-columns:1.3fr 1.2fr 1fr 1.2fr; gap:28px; padding:12px 0 32px; margin-bottom:24px; border-bottom:1px solid var(--border); }
 .footer-directory h2 { font:600 15px var(--sg); margin-bottom:12px; color:var(--text1); }
@@ -40,8 +40,6 @@ footer :focus-visible { outline:2px solid var(--blue); outline-offset:4px; }
 .editorial-list article h3 { margin-top:0; }
 .inner-page .hang.show .hang-card { animation:none; }
 .inner-page .hang { margin:28px 18px; max-width:680px; }
-.inner-page .marq-row { animation:none; flex-wrap:wrap; width:auto; }
-.inner-page .marq-row .tech-chip[aria-hidden] { display:none; }
 .inner-page .tech-chip { color:var(--text2); }
 .inner-page .price-scroller { --edge:0px; padding:8px 2px 28px; scroll-padding-left:2px; margin:0; }
 .inner-page .price-card { max-width:calc(100vw - 44px); }
@@ -94,7 +92,6 @@ th { font-weight:600; }
 .inner-page .fi::placeholder, .inner-page .fta::placeholder { color:var(--text2); opacity:1; }
 .inner-page .fi, .inner-page .fta, .inner-page .fsub { min-height:44px; }
 .inner-page .hang { width:calc(100% - 36px); }
-.inner-page .mobile-drawer, .projects-document .mobile-drawer { top:76px; max-height:calc(100dvh - 76px); overflow-y:auto; }
 .inner-page .custom-select-trigger { font-size:16px; }
 
 @media(prefers-reduced-motion:reduce) { html.static-page { scroll-behavior:auto; } }
@@ -112,3 +109,32 @@ footer .footer-brand { min-height:44px; display:inline-flex; align-items:center;
 .inner-page .logo, .projects-document .logo { display:inline-flex; align-items:center; min-height:44px; }
 .breadcrumbs ol { align-items:center; }
 .inner-page .fi, .inner-page .fta, .inner-page .custom-select-trigger { border-color:var(--text2); }
+
+/* One mobile navigation layout across the homepage and inner pages. */
+#nav .theme-toggle, #nav .nav-toggle { min-width:44px; min-height:44px; }
+#nav .logo { display:inline-flex; align-items:center; min-height:44px; }
+#drawer {
+  top:var(--nav-height, 77px);
+  max-height:calc(100vh - var(--nav-height, 77px));
+  max-height:calc(100dvh - var(--nav-height, 77px));
+  padding:8px 20px max(12px, env(safe-area-inset-bottom));
+  overflow-x:hidden;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  scroll-padding-block:8px;
+}
+#drawer > a { display:flex; align-items:center; flex-shrink:0; min-height:48px; color:var(--text1); }
+#drawer > a[aria-current="page"] { background:var(--bg2); text-decoration:underline; text-underline-offset:4px; }
+#drawer > a.m-cta, #drawer > a.m-cta:hover { justify-content:center; color:var(--bg); background:var(--hl); }
+#drawer .drawer-foot { flex-shrink:0; color:var(--text2); overflow-wrap:anywhere; }
+#drawer a:focus-visible, #nav :focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
+@media(min-width:641px) { #drawer { padding-inline:36px; } }
+@media(max-width:1050px) { #nav .nav-menu { display:none; } #nav .nav-toggle { display:flex; } }
+@media(min-width:1051px) { #drawer { display:none; } }
+@media(prefers-reduced-motion:reduce) {
+  .inner-page .marq-row { flex-wrap:wrap; width:auto; }
+  .inner-page .marq-row .tech-chip[aria-hidden] { display:none; }
+}
+#nav .nav-menu .nav-cta { color:var(--bg); background:var(--hl); }
+@media(prefers-reduced-motion:reduce) { #drawer { transition:none; } #nav .nav-toggle span { transition:none; } }

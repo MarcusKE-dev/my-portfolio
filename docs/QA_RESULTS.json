@@ -1,7 +1,7 @@
 {
   "date": "2026-10-22",
   "staticChecks": {
-    "assertions": 3261,
+    "assertions": 3257,
     "failures": 0,
     "warnings": 0,
     "pages": 17
@@ -41,5 +41,33 @@
   ],
   "lighthouse": "Not installed; scores not measured",
   "externalSchemaValidators": "Not run",
-  "productionDeployment": "Not performed"
+  "productionDeployment": "Not performed",
+  "navigationFollowUp": {
+    "menuLayouts": 170,
+    "themes": [
+      "dark",
+      "light"
+    ],
+    "widths": [
+      360,
+      768,
+      1024,
+      1440
+    ],
+    "shortScreenHeight": 320,
+    "keyboard": "Passed",
+    "allServicesNavigation": "Passed",
+    "desktopResize": "Passed",
+    "marqueeWidths": [
+      360,
+      768,
+      1024,
+      1440
+    ],
+    "marqueeDirections": "Left and right verified from transform changes",
+    "reducedMotion": "Passed",
+    "errors": [],
+    "menuTextMinimumContrast": 5.8,
+    "activeContactContrast": "Passed in both themes"
+  }
 }

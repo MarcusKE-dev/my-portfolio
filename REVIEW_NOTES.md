@@ -45,7 +45,7 @@ The Contact form retains the homepage Web3Forms endpoint, public access key, sub
 
 - No factual claims outside the authorised material were added. Preparation advice and hypothetical uses are labelled as suggestions or possibilities. They do not assert past client work or package inclusion.
 - Time-zone comparisons are additional derived facts requested by the brief, checked with `scripts/timezones.mjs` and the runtime's IANA/Intl data for January and July 2026. A normal Kenyan 09:00 to 17:00 day has one shared hour with Eastern working hours in summer, none in winter, and no Pacific overlap in either season. The copy corrects the brief's broader American-morning assumption and does not publish support hours.
-- The About page uses one moving signature element, the orbit. Hanging cards retain their design but their entrance swing is static here, and the tech icon strip does not drift. This reconciles the requested pieces with the one-moving-element limit.
+- The initial About page kept the icon strip static. At John’s request, the follow-up restores the original two marquee rows moving in opposite directions. Reduced-motion users get static rows without duplicate chips. Hanging cards retain their static entrance.
 - The check script permits “Solutions” only within the verified client name “Dalo Plumbing Solutions”. It still rejects it as a filler noun.
 - The default share image and icons were rendered in the site's palette with Space Grotesk and Outfit using Pillow. Assets are committed; optional regeneration does not add a browser library or a production build dependency.
 - Prices in both currencies are published starting points, not claims about current exchange rates. The comparison table marks only explicitly listed features as included.
@@ -54,7 +54,7 @@ The Contact form retains the homepage Web3Forms endpoint, public access key, sub
 
 - The homepage has pre-existing claims about project count, retention and Lighthouse scores. They were not copied into new pages or new schema, and were not independently substantiated.
 - The existing UWAZI GitHub button points to `#`. No source repository URL was invented, and new project links use its real live platform.
-- Existing custom selects lack keyboard semantics, the page lacks a skip link and main landmark, and several muted labels use `--text3`. These were left alone under the restricted homepage edit list. New pages have accessibility additions.
+- Homepage custom selects still lack keyboard semantics, the page lacks a skip link and main landmark, and several muted labels use `--text3`. These were left alone under the restricted homepage edit list. New pages have accessibility additions.
 - The existing shared script uses smooth anchor scrolling even under reduced motion. New pages intercept local anchor clicks with reduced-motion-aware scrolling; homepage behaviour is unchanged.
 
 - Schema.org marks the generic ProfessionalService type as deprecated. It is retained as explicitly requested and the same node also has type Service, which makes provider and serviceType valid properties. The stable business ID is unchanged. See [ProfessionalService](https://schema.org/ProfessionalService) and [provider](https://schema.org/provider).
@@ -71,7 +71,18 @@ The Contact form retains the homepage Web3Forms endpoint, public access key, sub
 - Real font files for Outfit, Space Grotesk and JetBrains Mono were served locally during browser checks. External tech-icon requests were intentionally blocked to exercise their existing letter fallback. Live CDN and production network performance were not measured.
 - Visual review used captured pages in both themes, with phone and desktop screenshots and the full requested viewport matrix. Shared footer headings and tap sizes were corrected to stay consistent across pages.
 - Important text token contrast: dark muted text on the card background is 5.34:1; light muted text on white is 8.18:1. Blue links are 8.00:1 on black and 5.86:1 on the light background. New form boundaries use the same readable token; focus rings remain blue. Decorative separators and the logo dot are not used to convey required text.
-- The original `style.css` and `script.js` are byte-for-byte unchanged from the initial commit.
+- The initial SEO release preserved `style.css` and `script.js`. The follow-up keeps `style.css` unchanged and updates the shared mobile menu logic in `script.js`, including focus, inert state and closing on desktop resize.
 - Lighthouse is not installed in the environment. No scores are claimed. New pages use no framework or extra browser library, reserve image space and use small WebP portraits. Measure real mobile scores after deployment.
 - Schema Markup Validator and Google Rich Results Test were not run. Local JSON parsing/reference checks pass; run the external validators on the deployed key pages.
 - See `docs/QA_RESULTS.json` for the compact results and `docs/SEO_PAGES.md` for every page URL, editing instructions and all eight follow-up tasks.
+
+
+## Mobile navigation and About follow-up
+
+John requested the shared mobile menu repair and restoration of the two moving technology rows. All services now opens `/services/` consistently. The homepage mobile About, Pricing and Contact links open their dedicated pages.
+
+The drawer follows the measured header height, keeps its links inside the viewport and scrolls on short screens. Shared keyboard handling covers the homepage as well as inner pages. Resizing to desktop closes the menu and releases the page scroll lock. The About technology rows reuse the original left/right marquee animations, with static rows for reduced motion.
+
+Validation: 170 page/theme/viewport layouts, including 320px-high screens, passed. Keyboard focus, real All services navigation, desktop resizing, opposite icon-row movement at 360/768/1024/1440px, and reduced motion passed without JavaScript page errors. The static check passes 3,257 assertions with zero failures or warnings. The earlier 3,261 total reflects homepage anchor checks before the mobile links were changed to dedicated pages.
+
+Follow-up menu text contrast was checked on Home, Services, Contact and About in both themes, including the current Contact button. The lowest measured ratio was 5.80:1.

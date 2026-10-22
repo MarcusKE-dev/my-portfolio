@@ -29,7 +29,7 @@ All HTML is committed and works on a static host without running a build. These 
 - `src/partials/`: common head, navigation and footer.
 - `src/site.mjs`: the shared personal location constant, origin and entity facts.
 - `src/pricing.json` and `src/projects.json`: canonical package and project facts used in schema. If John's rates or projects change, update the visible content and these facts together.
-- `pages.css` and `pages.js`: additions for the new pages, plus the shared footer utility styles. Original `style.css` and `script.js` are unchanged.
+- `pages.css` and `pages.js`: additions for the new pages, plus the shared footer utility styles. `style.css` is unchanged. `script.js` retains the original components, with shared mobile-menu accessibility and resize fixes.
 - `scripts/timezones.mjs`: calculates and verifies winter/summer offsets, then generates the static overlap graphic and text table.
 
 Run `npm run build`, then `npm run check`. Node 18 or newer is required; there are no package dependencies. Commit the source and generated HTML, sitemap and text exports together. The build deliberately never writes the homepage or Projects page. Their manually maintained shells must be kept aligned when shared partials change.
