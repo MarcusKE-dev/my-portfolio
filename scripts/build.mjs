@@ -2,6 +2,7 @@ import {readFile, writeFile, mkdir, access} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import {resolve, dirname} from 'node:path';
+import {markup as overlapMarkup} from './timezones.mjs';
 import {LOCATION, ORIGIN, AREAS, SERVICES, entities} from '../src/site.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 process.chdir(root);
@@ -50,7 +51,7 @@ const built=[];
 for(const page of pages) {
  const source='src/content/'+page.slug+'.html';
  try {await access(source);} catch {continue;}
- const content=render(await read(source),{location:escape(LOCATION)});
+ const content=render(await read(source),{location:escape(LOCATION),overlap:overlapMarkup()});
  const data={...page,title:escape(page.title),description:escape(page.description),location:escape(LOCATION),robots:page.indexable?'index, follow, max-image-preview:large, max-snippet:-1':'noindex',schema:JSON.stringify(graph(page,content)).replaceAll('<','\\u003c')};
  const active=s=>s.replace(/<a\b[^>]*href="([^"]+)"[^>]*>/g,(tag,href)=>href===new URL(page.canonical).pathname?tag.replace('>',' aria-current="page">'):tag);
  const crumbs='<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>'+page.breadcrumbs.map((b,i)=>'<li>'+(i===page.breadcrumbs.length-1?'<span aria-current="page">'+escape(b.name)+'</span>':'<a href="'+b.url+'">'+escape(b.name)+'</a>')+'</li>').join('')+'</ol></nav>';
