@@ -138,3 +138,30 @@ footer .footer-brand { min-height:44px; display:inline-flex; align-items:center;
 }
 #nav .nav-menu .nav-cta { color:var(--bg); background:var(--hl); }
 @media(prefers-reduced-motion:reduce) { #drawer { transition:none; } #nav .nav-toggle span { transition:none; } }
+
+/* Compact page rhythm without inheriting the homepage's 72px section padding. */
+.inner-page #main > section { padding:28px 0; }
+.inner-page #main > section > :last-child { margin-bottom:0; }
+.inner-page #main > .page-cta { margin-top:0; }
+.inner-page .page-intro { margin-bottom:24px; }
+.inner-page .editorial-list article > :last-child,
+.inner-page .service-summary > :last-child { margin-bottom:0; }
+.inner-page .editorial-list article:last-child { padding-bottom:0; }
+.page-about .marquee { margin-top:24px; }
+.projects-document #main > .page-header { padding:110px 0 24px; }
+.projects-document #projects-page { padding:8px 0 48px; }
+
+/* The homepage guide links stay in flow, centered between their sections. */
+.home-page .section-more { display:flex; justify-content:center; align-items:center; margin:0; padding:28px 0; }
+.home-page .section-more .btn-ghost { min-height:44px; display:inline-flex; align-items:center; justify-content:center; }
+.home-page #services { padding-bottom:0; }
+.home-page #services .svc-slot:last-child { margin-bottom:0; }
+.home-page #about { padding-bottom:0; }
+.home-page #pricing { padding-top:0; padding-bottom:0; }
+.home-page #testimonials { padding-top:0; }
+.home-page #expertise { margin-top:0; padding-top:0; }
+@media(max-width:760px) {
+  .inner-page #main > section { padding-block:20px; }
+}
+.inner-page main { padding-bottom:32px; }
+.inner-page #main > section > :is(ul, ol) > li:last-child { margin-bottom:0; }

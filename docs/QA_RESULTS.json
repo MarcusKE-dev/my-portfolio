@@ -69,5 +69,30 @@
     "errors": [],
     "menuTextMinimumContrast": 5.8,
     "activeContactContrast": "Passed in both themes"
+  },
+  "spacingFollowUp": {
+    "renders": 136,
+    "widths": [
+      360,
+      768,
+      1024,
+      1440
+    ],
+    "themes": [
+      "dark",
+      "light"
+    ],
+    "touchWidths": [
+      360,
+      768,
+      1024
+    ],
+    "homepageGuideLinks": "All three centered horizontally and vertically inside equal spacing; All services does not overlap Tech Stack",
+    "lastTouchServiceCard": "Still flips when its guide link is in view",
+    "innerSectionPadding": "20px per side on phones, 28px on larger screens",
+    "projectIntroductionGap": 32,
+    "horizontalOverflow": "None",
+    "javascriptErrors": [],
+    "sitemapURLs": 16
   }
 }
