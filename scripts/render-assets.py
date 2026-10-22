@@ -7,16 +7,20 @@ from PIL import Image, ImageDraw, ImageFont
 import sys
 root = Path(__file__).resolve().parent.parent
 space, outfit = sys.argv[1:3]
+def font(file, size, weight=500):
+    face = ImageFont.truetype(file, size)
+    face.set_variation_by_axes([weight])
+    return face
 image = Image.new('RGB', (1200, 630), '#000000')
 draw = ImageDraw.Draw(image)
-draw.text((82, 135), 'Dev.John', font=ImageFont.truetype(space, 92), fill='#f5f5f5')
-draw.text((86, 269), 'John Mwaura', font=ImageFont.truetype(space, 48), fill='#f5f5f5')
-draw.text((86, 345), 'Web and software developer in Kenya', font=ImageFont.truetype(outfit, 36), fill='#8a8a8a')
-draw.text((86, 482), 'devjohn.site', font=ImageFont.truetype(outfit, 30), fill='#f5f5f5')
+draw.text((82, 135), 'Dev.John', font=font(space, 92, 600), fill='#f5f5f5')
+draw.text((86, 269), 'John Mwaura', font=font(space, 48), fill='#f5f5f5')
+draw.text((86, 345), 'Web and software developer in Kenya', font=font(outfit, 36), fill='#8a8a8a')
+draw.text((86, 482), 'devjohn.site', font=font(outfit, 30), fill='#f5f5f5')
 image.save(root / 'images/og-default.png', optimize=True)
 icon = Image.new('RGB', (512, 512), '#000000')
 draw = ImageDraw.Draw(icon)
-draw.text((256, 256), 'DJ', anchor='mm', font=ImageFont.truetype(space, 275), fill='#f5f5f5')
+draw.text((256, 256), 'DJ', anchor='mm', font=font(space, 275, 700), fill='#f5f5f5')
 for size in (48, 192, 512):
     icon.resize((size,size), Image.Resampling.LANCZOS).save(root / f'favicon-{size}.png', optimize=True)
 icon.resize((180,180), Image.Resampling.LANCZOS).save(root / 'apple-touch-icon.png', optimize=True)

@@ -90,6 +90,10 @@ async function checkLink(raw,page,label) {
 const locations=['web-developer-kenya','web-developer-east-africa','web-developer-nigeria','international-clients'];
 function grams(s){const w=s.toLowerCase().replace(/[^a-z0-9\s]/g,'').split(/\s+/);return new Set(w.slice(0,-4).map((_,i)=>w.slice(i,i+5).join(' ')));}
 for(let a=0;a<locations.length;a++)for(let b=a+1;b<locations.length;b++)if(mainTexts[locations[a]]&&mainTexts[locations[b]]){const x=grams(mainTexts[locations[a]]),y=grams(mainTexts[locations[b]]);const shared=[...x].filter(g=>y.has(g)).length/Math.min(x.size,y.size);check(shared<=.35,'Location overlap '+locations[a]+' / '+locations[b]+': '+(shared*100).toFixed(1)+'%');console.log('Location overlap: '+locations[a]+' / '+locations[b]+' '+(shared*100).toFixed(1)+'%');}
+const homeForm=(await read('index.html')).match(/<form class="form" id="cform"[^]*?<\/form>/)?.[0];
+const contactForm=(await read('contact/index.html')).match(/<form class="form" id="cform"[^]*?<\/form>/)?.[0];
+const normalizeForm=s=>s?.replace(/<!--[^]*?-->/g,'').replaceAll(' – ',' to ').replaceAll('1–3','1 to 3').replace(/\s+/g,' ').trim();
+check(Boolean(homeForm)&&normalizeForm(homeForm)===normalizeForm(contactForm),'Contact form differs from homepage beyond permitted range punctuation');
 const sitemap=await read('sitemap.xml'),locs=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
 const wanted=targets.filter(p=>p.indexable).map(p=>p.canonical);
 check(locs.length===wanted.length,'Sitemap count differs');for(const url of wanted)check(locs.filter(u=>u===url).length===1,'Sitemap must contain exactly once: '+url);for(const url of locs)check(wanted.includes(url),'Unexpected sitemap URL '+url);

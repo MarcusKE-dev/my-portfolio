@@ -1,6 +1,6 @@
 # Dev John (John Mwaura)
 
-> Dev John is the working name of John Mwaura, an independent web and software developer in Kenya. He builds business websites, online stores, custom software and WhatsApp automation for clients in Kenya, East Africa, Nigeria, the USA, Canada and the UK. He is the founder of ABC Systems.
+> Dev John is the working name of John Mwaura, an independent web and software developer in Kenya. He builds business websites, online stores, custom software and WhatsApp automation. He can serve clients in Kenya, East Africa, Nigeria, the USA, Canada and the UK. He is the founder of ABC Systems.
 
 ## Key pages
 - [About](https://devjohn.site/about/): who John Mwaura is and how he works

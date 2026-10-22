@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-22",
+  "staticChecks": {
+    "assertions": 3261,
+    "failures": 0,
+    "warnings": 0,
+    "pages": 17
+  },
+  "browser": {
+    "renders": 136,
+    "widths": [
+      360,
+      768,
+      1024,
+      1440
+    ],
+    "themes": [
+      "dark",
+      "light"
+    ],
+    "javascriptErrors": [],
+    "keyboard": "Skip link, page Tab traversal, drawer open/close and Escape focus checked",
+    "reducedMotion": "No running animations on inner pages",
+    "animatedThemePages": 16,
+    "form": "Intercepted successful response, no external submission sent",
+    "notFound": "Local unknown path returned 404 with custom content"
+  },
+  "finalLayout": {
+    "renders": 136,
+    "mobileTapTargets": "New-page visible controls at least 44 by 44 CSS pixels",
+    "horizontalOverflow": "None",
+    "brokenLocalImages": "None"
+  },
+  "locationOverlapPercent": [
+    5.1,
+    6.5,
+    5.8,
+    7.1,
+    6.0,
+    8.3
+  ],
+  "lighthouse": "Not installed; scores not measured",
+  "externalSchemaValidators": "Not run",
+  "productionDeployment": "Not performed"
+}

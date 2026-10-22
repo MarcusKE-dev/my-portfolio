@@ -53,9 +53,25 @@ The Contact form retains the homepage Web3Forms endpoint, public access key, sub
 ## Existing homepage issues left unchanged by scope
 
 - The homepage has pre-existing claims about project count, retention and Lighthouse scores. They were not copied into new pages or new schema, and were not independently substantiated.
+- The existing UWAZI GitHub button points to `#`. No source repository URL was invented, and new project links use its real live platform.
 - Existing custom selects lack keyboard semantics, the page lacks a skip link and main landmark, and several muted labels use `--text3`. These were left alone under the restricted homepage edit list. New pages have accessibility additions.
 - The existing shared script uses smooth anchor scrolling even under reduced motion. New pages intercept local anchor clicks with reduced-motion-aware scrolling; homepage behaviour is unchanged.
 
+- Schema.org marks the generic ProfessionalService type as deprecated. It is retained as explicitly requested and the same node also has type Service, which makes provider and serviceType valid properties. The stable business ID is unchanged. See [ProfessionalService](https://schema.org/ProfessionalService) and [provider](https://schema.org/provider).
+
 ## QA
 
-Final results will be recorded after the browser pass.
+- `npm run build` generates 15 new pages without writing the existing homepage or Projects page.
+- `npm run check`: 3,261 assertions, zero failures, zero warnings across 17 pages. This includes exact form parity after normalising only range punctuation.
+- Browser matrix: all 17 pages opened in dark and light at 360, 768, 1024 and 1440 CSS pixels (136 renders). No horizontal page overflow, broken local images or JavaScript page errors.
+- Keyboard pass: page Tab traversal, skip links, menu open/close, Escape focus restoration and custom select selection. New-page mobile targets were measured at least 44 by 44 CSS pixels.
+- Reduced motion: no running animations on inner pages. With motion enabled, both circle theme directions were exercised on all 16 inner pages.
+- Contact success tested with an intercepted Web3Forms response. No real test enquiry was delivered. The endpoint, access key, subject, botcheck and named fields match the homepage after the documented punctuation change.
+- Pricing table scrolls inside its own container. Local unknown paths return HTTP 404 with the custom page in the test server. Production routing still needs checking after deployment.
+- Real font files for Outfit, Space Grotesk and JetBrains Mono were served locally during browser checks. External tech-icon requests were intentionally blocked to exercise their existing letter fallback. Live CDN and production network performance were not measured.
+- Visual review used captured pages in both themes, with phone and desktop screenshots and the full requested viewport matrix. Shared footer headings and tap sizes were corrected to stay consistent across pages.
+- Important text token contrast: dark muted text on the card background is 5.34:1; light muted text on white is 8.18:1. Blue links are 8.00:1 on black and 5.86:1 on the light background. New form boundaries use the same readable token; focus rings remain blue. Decorative separators and the logo dot are not used to convey required text.
+- The original `style.css` and `script.js` are byte-for-byte unchanged from the initial commit.
+- Lighthouse is not installed in the environment. No scores are claimed. New pages use no framework or extra browser library, reserve image space and use small WebP portraits. Measure real mobile scores after deployment.
+- Schema Markup Validator and Google Rich Results Test were not run. Local JSON parsing/reference checks pass; run the external validators on the deployed key pages.
+- See `docs/QA_RESULTS.json` for the compact results and `docs/SEO_PAGES.md` for every page URL, editing instructions and all eight follow-up tasks.

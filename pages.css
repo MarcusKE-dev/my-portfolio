@@ -91,3 +91,24 @@ th { font-weight:600; }
 .projects-document .proj-type, .projects-document .pstack, .projects-document .sec-desc { color:var(--text2); }
 .projects-document .nav-toggle, .projects-document .theme-toggle { min-width:44px; min-height:44px; }
 @media(max-width:1050px) { .projects-document .nav-menu { display:none; } .projects-document .nav-toggle { display:flex; } }
+.inner-page .fi::placeholder, .inner-page .fta::placeholder { color:var(--text2); opacity:1; }
+.inner-page .fi, .inner-page .fta, .inner-page .fsub { min-height:44px; }
+.inner-page .hang { width:calc(100% - 36px); }
+.inner-page .mobile-drawer, .projects-document .mobile-drawer { top:76px; max-height:calc(100dvh - 76px); overflow-y:auto; }
+.inner-page .custom-select-trigger { font-size:16px; }
+
+@media(prefers-reduced-motion:reduce) { html.static-page { scroll-behavior:auto; } }
+.inner-page .nav-menu .nav-cta, .projects-document .nav-menu .nav-cta { color:var(--bg); background:var(--hl); }
+@media(prefers-reduced-motion:reduce) { .projects-document *, .projects-document *::before, .projects-document *::after { animation:none !important; transition:none !important; } .projects-document .fade { opacity:1; transform:none; } }
+.inner-page .footer-directory h2 { font:600 15px var(--sg); margin:0 0 12px; letter-spacing:normal; }
+.inner-page .pc-name { font-size:21px; line-height:1.2; margin:0; }
+footer .footer-socials .social-link { width:44px; height:44px; }
+footer .footer-brand { min-height:44px; display:inline-flex; align-items:center; }
+@media(max-width:760px) {
+  .inner-page main a { display:inline-flex; align-items:center; min-height:44px; min-width:44px; max-width:100%; vertical-align:baseline; }
+  .projects-document .plink { display:inline-flex; align-items:center; min-height:44px; min-width:44px; }
+}
+.footer-directory a { min-width:44px; }
+.inner-page .logo, .projects-document .logo { display:inline-flex; align-items:center; min-height:44px; }
+.breadcrumbs ol { align-items:center; }
+.inner-page .fi, .inner-page .fta, .inner-page .custom-select-trigger { border-color:var(--text2); }
