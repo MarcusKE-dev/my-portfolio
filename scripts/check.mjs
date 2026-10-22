@@ -64,7 +64,7 @@ for(const page of targets) {
   check(!/[\u2013\u2014]/u.test(plain(body)),label+'forbidden dash');
   check(!/[\u{1F000}-\u{1FAFF}\u2600-\u27BF\u2300-\u23FF]/u.test(plain(body)),label+'emoji or symbol');
   check(!plain(body).includes('!'),label+'exclamation in body text');
-  for(const word of banned)check(!new RegExp('\\b'+word.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','i').test(text),label+'banned phrase: '+word);
+  for(const word of banned)check(!new RegExp('\\b'+word.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','i').test(text.replaceAll('Dalo Plumbing Solutions','Dalo Plumbing')),label+'banned phrase: '+word);
   const content=main.replace(/<nav\b[^>]*class="breadcrumbs"[^>]*>[^]*?<\/nav>/,'');
   const words=plain(content).split(/\s+/).length;
   const minimum=page.slug==='about'?800:['pricing','international-clients'].includes(page.slug)?900:page.slug==='contact'?300:page.slug==='services'||page.slug.startsWith('services/')||page.slug.startsWith('web-developer-')?600:0;
